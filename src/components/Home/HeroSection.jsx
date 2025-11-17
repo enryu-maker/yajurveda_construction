@@ -24,7 +24,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[#0a1128]/90 z-0"></div>
 
       {/* Content Grid */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl w-full mx-auto">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl w-full mx-auto ">
 
         {/* LEFT SIDE */}
         <div className="flex flex-col justify-center">
@@ -53,7 +53,6 @@ const HeroSection = () => {
                 Legacy.
               </h1>
             </div>
-
 
             {/* Explore Button */}
             <div className="flex justify-center lg:justify-end">
@@ -124,7 +123,7 @@ const HeroSection = () => {
       </div>
 
       {/* Bottom Name */}
-      <p className="z-10 text-sm mt-6 font-[PoppinsMedium] text-center">
+      <p className="z-10 text-sm  font-[PoppinsMedium] text-center ">
         YAJURVEDA CONSTRUCTION PVT. LTD.
       </p>
     </div>

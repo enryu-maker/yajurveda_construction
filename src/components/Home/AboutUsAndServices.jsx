@@ -40,7 +40,7 @@ const AboutUsAndServices = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16">
 
         {/* --------------------- ABOUT SECTION ---------------------- */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 ">
 
           {/* LEFT CONTENT */}
           <div className="lg:w-3/5">
@@ -70,38 +70,58 @@ const AboutUsAndServices = () => {
             </p>
           </div>
 
-          {/* RIGHT BUTTON */}
-          <div className="lg:w-2/5 flex lg:justify-end">
+        </div>
+
+        {/* RIGHT BUTTON */}
+        <div className="flex justify-end ">
+          <div className="flex">
             <button
               className="
-                px-8 py-4 
-                flex items-center gap-3 
-                bg-[#253672] text-white 
-                rounded-full text-lg transition 
-                hover:bg-white hover:text-[#253672] 
-                border border-[#253672]
-              "
+              group
+              px-8 py-2
+              flex items-center gap-3 
+              bg-[#253672] text-white 
+              rounded-full text-lg transition 
+              hover:bg-white hover:text-[#253672] 
+              border border-[#253672]
+            "
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <div
+                className="
+                p-2
+                border-2 border-white rounded-full 
+                transition duration-300
+                group-hover:bg-white
+                group-hover:border-[#253672]
+              "
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              Meet The Team
+                <svg
+                  className="
+                  w-5 h-5 text-white transform rotate-225 
+                  transition duration-300
+                  group-hover:text-[#253672]
+                "
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </div>
+
+              Learn More
             </button>
           </div>
+
         </div>
 
         {/* --------------------- SERVICES SECTION ---------------------- */}
-        <div className="mt-12">
+        <div className="mt-20">
           {/* HEADING ROW */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
             <h2 className="text-3xl sm:text-5xl font-[PoppinsRegular] text-[#253672]">
@@ -157,6 +177,9 @@ const AboutUsAndServices = () => {
           />
         </svg>
       </div>
+
+
+
     </div>
   );
 };

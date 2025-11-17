@@ -18,7 +18,7 @@ const ProjectsHero = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto">
 
         {/* SECTION TITLE */}
-        <h2 className="text-center text-3xl sm:text-5xl font-[PoppinsRegular] mb-10 sm:mb-16 lg:mb-10 opacity-90">
+        <h2 className="text-center text-3xl sm:text-5xl font-[PoppinsRegular] my-10 sm:my-16 lg:my-10 opacity-90">
           Our Projects
         </h2>
 
@@ -35,7 +35,7 @@ const ProjectsHero = () => {
           {/* PROJECT TITLE */}
           <h1
             className="
-              text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl
+              text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl
               font-[PoppinsSbold] tracking-tight 
               leading-[1.15] mb-6 sm:mb-8
               break-words
@@ -48,7 +48,7 @@ const ProjectsHero = () => {
 
           {/* DESCRIPTION */}
           <p className="text-base sm:text-lg md:text-xl font-[PoppinsRegular] max-w-2xl 
-                        mb-10 sm:mb-12 leading-relaxed">
+                        mb-6 leading-relaxed">
             A landmark structure built to ensure smooth, safe connectivity
             across the Godavari River with strong engineering and lasting durability.
           </p>
