@@ -92,7 +92,7 @@ const ClientFeedback = () => {
               </h3>
 
               {/* FEEDBACK */}
-              <p className="text-sm sm:text-base text-white/80 font-[PoppinsLight] leading-relaxed">
+              <p className="text-sm sm:text-base text-white/80 font-[PoppinsElight] leading-relaxed">
                 {client.feedback}
               </p>
             </div>

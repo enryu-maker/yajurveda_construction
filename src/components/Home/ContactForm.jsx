@@ -6,7 +6,7 @@ const ContactForm = () => {
   };
 
   const inputClasses = `
-      w-full px-5 py-4 text-white text-base sm:text-lg font-[PoppinsLight]
+      w-full px-5 py-4 text-white text-base sm:text-lg font-[PoppinsElight]
       bg-white/5 border-2 border-white/30 rounded-xl
       focus:outline-none focus:border-white transition duration-300
       placeholder-white/70 backdrop-blur-sm
@@ -57,7 +57,7 @@ const ContactForm = () => {
             <div className="flex flex-col space-y-6">
 
               {/* Name + Phone */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
                 <input type="text" placeholder="Your Name" className={inputClasses} />
                 <input type="tel" placeholder="Phone Number" className={inputClasses} />
               </div>
@@ -69,7 +69,7 @@ const ContactForm = () => {
               <div className="relative group">
                 <select
                   className="
-                    w-full px-5 py-4 text-white text-base sm:text-lg font-[PoppinsLight]
+                    w-full px-5 py-4 text-white text-base sm:text-lg font-[PoppinsElight]
                     bg-white/5 border-2 border-white/30 rounded-xl
                     appearance-none cursor-pointer
                     focus:border-white focus:bg-white/10
@@ -77,9 +77,9 @@ const ContactForm = () => {
                   "
                 >
                   <option value="" hidden>Enquiries</option>
-                  <option className="text-black" value="sales">Sales</option>
-                  <option className="text-black" value="support">Support</option>
-                  <option className="text-black" value="other">Other</option>
+                  <option className="text-black font-[PoppinsElight]" value="sales">Sales</option>
+                  <option className="text-black font-[PoppinsElight]" value="support">Support</option>
+                  <option className="text-black font-[PoppinsElight]" value="other">Other</option>
                 </select>
 
                 {/* Arrow */}

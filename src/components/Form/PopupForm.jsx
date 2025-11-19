@@ -44,7 +44,7 @@ export default function PopupForm({ onClose }) {
                   type="text"
                   name="name"
                   onChange={handleChange}
-                  className="w-full font-[PoppinsLight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
+                  className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -58,7 +58,7 @@ export default function PopupForm({ onClose }) {
                       type="text"
                       name="number"
                       onChange={handleChange}
-                      className="w-full font-[PoppinsLight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
+                      className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -80,7 +80,7 @@ export default function PopupForm({ onClose }) {
                       type="text"
                       name="otp"
                       onChange={handleChange}
-                      className="w-full font-[PoppinsLight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
+                      className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
                       placeholder="Enter OTP"
                     />
                   </div>
@@ -103,7 +103,7 @@ export default function PopupForm({ onClose }) {
                       type="text"
                       name="location"
                       onChange={handleChange}
-                      className="w-full font-[PoppinsLight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
+                      className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
                       placeholder="Enter your city or area"
                     />
                   </div>
@@ -114,7 +114,7 @@ export default function PopupForm({ onClose }) {
                       type="text"
                       name="pincode"
                       onChange={handleChange}
-                      className="w-full font-[PoppinsLight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
+                      className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
                       placeholder="Enter pin code"
                     />
                   </div>
@@ -125,7 +125,7 @@ export default function PopupForm({ onClose }) {
                       type="email"
                       name="email"
                       onChange={handleChange}
-                      className="w-full font-[PoppinsLight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
+                      className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none"
                       placeholder="Enter your email"
                     />
                   </div>
