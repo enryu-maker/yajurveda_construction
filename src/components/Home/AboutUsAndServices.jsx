@@ -12,19 +12,19 @@ const AboutUsAndServices = () => {
       image: realEstateImage,
       title: "Real Estate Development",
       description:
-        "Quality-driven construction services delivering reliable residential and commercial projects.",
+        "We deliver high-quality residential, commercial, industrial, and land development projects focused on long-term value. From planning and designing to execution and handover, our team ensures structural excellence, premium build quality, and timely delivery — helping clients invest confidently and live securely.",
     },
     {
       image: litigationImage,
       title: "Litigation Property",
       description:
-        "नाशिक में कानूनी उलझन वाली प्रॉपर्टी के लिए। बेचने या समाधान के लिए हमारी टीम से संपर्क करें। ",
+        "We provide expert assistance for properties involved in legal disputes or documentation issues. Whether you're looking to resolve a conflict, sell a disputed property, or verify legal status, our team ensures safe, transparent, and reliable guidance throughout the process.",
     },
     {
       image: constructionImage,
       title: "Construction Management",
       description:
-        "Professional construction management that keeps your project on schedule and on budget.",
+        "From budgeting and material procurement to vendor coordination, on-site supervision and quality checks, we manage every stage of construction efficiently. Our structured approach ensures your project runs smoothly, finishes on time, and stays within the planned budget — with complete transparency at every step.",
     },
   ];
 
@@ -58,15 +58,22 @@ const AboutUsAndServices = () => {
 
             {/* PARAGRAPHS */}
             <p className="mt-6 text-base sm:text-lg max-w-3xl font-[PoppinsRegular] text-[#253672]">
-              Yajurveda Construction builds high-quality, lasting spaces with a focus on trust, precision, and innovation.
-              Our mission is simple — deliver reliable residential and commercial projects with honesty, craftsmanship, and a
-              customer-first approach.
+              Founded in 2026, Yajurveda Construction began as a small real estate development group in Nashik. Over the years, we have grown into a multi-disciplinary construction and property development company, serving clients across India.
             </p>
 
             <p className="mt-4 text-base sm:text-lg max-w-3xl font-[PoppinsRegular] text-[#253672]">
-              As a forward-thinking construction company, we bring together innovation, reliability, and craftsmanship.
-              Every project is built to last, built with purpose,
-              and built for the people who depend on it.
+              What started as a local development initiative has now evolved into a trusted brand in:
+              <ol>
+                <li> &bull; Construction & Infrastructure</li>
+                <li> &bull; Land Development</li>
+                <li> &bull; Re-development Projects</li>
+                <li> &bull; Commercial & Industrial Parks</li>
+                <li> &bull; Agricultural and Natural Villa Projects</li>
+                <li> &bull; Real Estate Investment Support & Consultancy</li>
+              </ol>
+            </p>
+            <p className="mt-4 text-base sm:text-lg max-w-3xl font-[PoppinsRegular] text-[#253672]">
+              Our growth is fueled by our commitment to transparency, innovation, long-term vision, and customer-first values.
             </p>
           </div>
 
