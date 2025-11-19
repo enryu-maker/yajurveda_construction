@@ -1,0 +1,43 @@
+{
+  "footer": {
+    "companyName": "YAJURVEDA CONSTRUCTION PVT LTD.",
+    "socialsHeading": "Our Socials",
+    "linksHeading": "Quick Links",
+    "links": [
+      "Home",
+      "About",
+      "Services",
+      "Projects",
+      "Testimonials",
+      "Contact Us"
+    ],
+    "servicesHeading": "Services",
+    "services": [
+      "Litigation Property",
+      "Construction Management",
+      "Real Estate Development"
+    ],
+    "contactHeading": "Contact Details",
+    "callUsLabel": "Call Us",
+    "phoneNumber": "+91 9737073390",
+    "addressLabel": "Address",
+    "addressLine1": "Gangapur Road,",
+    "addressLine2": "Nashik, 444001",
+    "hoursLabel": "Active Hours",
+    "hoursDays": "Mon–Fri",
+    "hoursTime": "11:00 AM to 06:00 PM",
+    "copyright": "© 2025 YAJURVEDA CONSTRUCTION PVT LTD.",
+    "allRights": "All Rights Reserved.",
+    "madeWith": "Made with ❤️ by"
+  },
+  "header": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "services": "Services",
+      "contact": "Contact Us"
+    },
+    "button": "Get In Touch"
+  }
+}

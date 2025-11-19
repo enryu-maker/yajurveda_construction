@@ -6,14 +6,16 @@ const App = () => {
 
   const [showModal, setShowModal] = useState(true);
 
-  // optional: show modal only once per browser using localStorage
   useEffect(() => {
-    const seen = localStorage.getItem("seenPopup");
-    if (seen === "1") setShowModal(false);
+    try {
+      const filled = localStorage.getItem("formFilled");
+      if (filled === "1") setShowModal(false);
+    } catch (err) {
+      // ignore localStorage errors
+    }
   }, []);
 
   const handleClose = () => {
-    localStorage.setItem("seenPopup", "1"); // optional
     setShowModal(false);
   };
 

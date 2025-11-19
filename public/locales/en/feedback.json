@@ -1,0 +1,25 @@
+{
+  "header": {
+    "titleLine1": "Feedback From",
+    "titleLine2": "Our Clients",
+    "button": "Testimonials"
+  },
+  "testimonials": [
+    {
+      "name": "Lorem Ipsum",
+      "feedback": "The team's transparency and communication are exceptional. We always feel informed and supported."
+    },
+    {
+      "name": "Lorem Ipsum",
+      "feedback": "Their personal attention and market knowledge make investing easy and dependable."
+    },
+    {
+      "name": "Lorem Ipsum",
+      "feedback": "Yajurveda Properties has been the most transparent investment partner I've worked with."
+    },
+    {
+      "name": "Lorem Ipsum",
+      "feedback": "From the first meeting to project completion, the team handled everything professionally."
+    }
+  ]
+}

@@ -1,23 +1,25 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = () => {
+  const { t } = useTranslation('contact');
+
   const gradientStyle = {
     background: "linear-gradient(to bottom, #4666D8 0%, #253672 100%)",
   };
 
   const inputClasses = `
-      w-full px-5 py-4 text-white text-base sm:text-lg font-[PoppinsElight]
-      bg-white/5 border-2 border-white/30 rounded-xl
-      focus:outline-none focus:border-white transition duration-300
-      placeholder-white/70 backdrop-blur-sm
+    w-full px-5 py-4 text-white text-base sm:text-lg font-[PoppinsElight]
+    bg-white/5 border-2 border-white/30 rounded-xl
+    focus:outline-none focus:border-white transition duration-300
+    placeholder-white/70 backdrop-blur-sm
   `;
 
   return (
-    <div
+    <div id="contact"
       className="w-full min-h-screen flex items-center justify-center rounded-b-4xl py-16 sm:py-20 px-4 sm:px-8 lg:px-16 text-white"
       style={gradientStyle}
     >
-      {/* Outer Panel */}
       <div className="
           w-full max-w-6xl 
           p-6 sm:p-10 lg:p-14 
@@ -29,13 +31,12 @@ const ContactForm = () => {
       ">
         <div className="relative z-10">
 
-          {/* ---- Header ---- */}
           <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-6 mb-12">
 
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-[PoppinsRegular] leading-tight">
-              Start The
+              {t('header.titleLine1')}
               <br />
-              Conversation!
+              {t('header.titleLine2')}
             </h2>
 
             <button className="
@@ -46,26 +47,21 @@ const ContactForm = () => {
               bg-white/10 hover:bg-white/20 
               transition duration-300
             ">
-              Contact Us
+              {t('header.button')}
             </button>
           </div>
 
-          {/* ---- Main Grid ---- */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-            {/* LEFT COLUMN — FORM */}
             <div className="flex flex-col space-y-6">
 
-              {/* Name + Phone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
-                <input type="text" placeholder="Your Name" className={inputClasses} />
-                <input type="tel" placeholder="Phone Number" className={inputClasses} />
+                <input type="text" placeholder={t('form.placeholderName')} className={inputClasses} />
+                <input type="tel" placeholder={t('form.placeholderPhone')} className={inputClasses} />
               </div>
 
-              {/* Email */}
-              <input type="email" placeholder="Email Address" className={inputClasses} />
+              <input type="email" placeholder={t('form.placeholderEmail')} className={inputClasses} />
 
-              {/* Dropdown */}
               <div className="relative group">
                 <select
                   className="
@@ -76,13 +72,12 @@ const ContactForm = () => {
                     transition duration-300 backdrop-blur-sm
                   "
                 >
-                  <option value="" hidden>Enquiries</option>
-                  <option className="text-black font-[PoppinsElight]" value="sales">Sales</option>
-                  <option className="text-black font-[PoppinsElight]" value="support">Support</option>
-                  <option className="text-black font-[PoppinsElight]" value="other">Other</option>
+                  <option value="" hidden>{t('form.dropdownEnquiries')}</option>
+                  <option className="text-black font-[PoppinsElight]" value="sales">{t('form.optionSales')}</option>
+                  <option className="text-black font-[PoppinsElight]" value="support">{t('form.optionSupport')}</option>
+                  <option className="text-black font-[PoppinsElight]" value="other">{t('form.optionOther')}</option>
                 </select>
 
-                {/* Arrow */}
                 <div className="
                   absolute inset-y-0 right-4 flex items-center 
                   pointer-events-none 
@@ -102,11 +97,10 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              {/* Footer: Tagline + Submit */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-4">
 
                 <p className="text-base sm:text-lg">
-                  Let's turn plans into possibilities
+                  {t('form.tagline')}
                 </p>
 
                 <button
@@ -121,12 +115,11 @@ const ContactForm = () => {
                     transition duration-300 shadow-md
                   "
                 >
-                  Submit
+                  {t('form.submitButton')}
                 </button>
               </div>
             </div>
 
-            {/* RIGHT COLUMN — MAP */}
             <div className="flex justify-center md:justify-end items-start">
               <div className="w-full h-64 sm:h-72 md:h-full max-h-[380px]">
                 <iframe
@@ -143,7 +136,6 @@ const ContactForm = () => {
           </div>
         </div>
 
-        {/* visual background layer */}
         <div className="absolute inset-0 rounded-[2rem] -z-10 pointer-events-none" />
       </div>
     </div>

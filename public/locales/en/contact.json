@@ -1,0 +1,18 @@
+{
+  "header": {
+    "titleLine1": "Start The",
+    "titleLine2": "Conversation!",
+    "button": "Contact Us"
+  },
+  "form": {
+    "placeholderName": "Your Name",
+    "placeholderPhone": "Phone Number",
+    "placeholderEmail": "Email Address",
+    "dropdownEnquiries": "Enquiries",
+    "optionSales": "Sales",
+    "optionSupport": "Support",
+    "optionOther": "Other",
+    "tagline": "Let's turn plans into possibilities",
+    "submitButton": "Submit"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "aboutSection": {
+    "aboutUsButton": "About Us",
+    "heading1_beforeBold": "Crafted with",
+    "heading1_bold": "care",
+    "heading2_beforeBold": "Delivered with",
+    "heading2_bold": "precision",
+    "paragraph1": "Founded in 2026, Yajurveda Construction began as a small real estate development group in Nashik. Over the years, we have grown into a multi-disciplinary construction and property development company, serving clients across India.",
+    "paragraph2_intro": "What started as a local development initiative has now evolved into a trusted brand in:",
+    "listItems": {
+      "item1": "Construction & Infrastructure",
+      "item2": "Land Development",
+      "item3": "Re-development Projects",
+      "item4": "Commercial & Industrial Parks",
+      "item5": "Agricultural and Natural Villa Projects",
+      "item6": "Real Estate Investment Support & Consultancy"
+    },
+    "paragraph3": "Our growth is fueled by our commitment to transparency, innovation, long-term vision, and customer-first values.",
+    "learnMoreButton": "Learn More"
+  },
+  "servicesSection": {
+    "heading": "Our Services",
+    "offerButton": "What We Offer",
+    "cards": [
+      {
+        "title": "Real Estate Development",
+        "description": "We deliver high-quality residential, commercial, industrial, and land development projects focused on long-term value. From planning and designing to execution and handover, our team ensures structural excellence, premium build quality, and timely delivery — helping clients invest confidently and live securely."
+      },
+      {
+        "title": "Litigation Property",
+        "description": "We provide expert assistance for properties involved in legal disputes or documentation issues. Whether you're looking to resolve a conflict, sell a disputed property, or verify legal status, our team ensures safe, transparent, and reliable guidance throughout the process."
+      },
+      {
+        "title": "Construction Management",
+        "description": "From budgeting and material procurement to vendor coordination, on-site supervision and quality checks, we manage every stage of construction efficiently. Our structured approach ensures your project runs smoothly, finishes on time, and stays within the planned budget — with complete transparency at every step."
+      }
+    ]
+  }
+}

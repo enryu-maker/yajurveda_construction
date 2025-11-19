@@ -1,0 +1,18 @@
+{
+  "header": {
+    "titleLine1": "बातचीत",
+    "titleLine2": "शुरू करें!",
+    "button": "हमसे संपर्क करें"
+  },
+  "form": {
+    "placeholderName": "आपका नाम",
+    "placeholderPhone": "फ़ोन नंबर",
+    "placeholderEmail": "ईमेल पता",
+    "dropdownEnquiries": "पूछताछ",
+    "optionSales": "बिक्री",
+    "optionSupport": "समर्थन",
+    "optionOther": "अन्य",
+    "tagline": "आइए योजनाओं को संभावनाओं में बदलें",
+    "submitButton": "प्रस्तुत करें"
+  }
+}

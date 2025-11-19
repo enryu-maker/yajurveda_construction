@@ -1,0 +1,18 @@
+{
+  "header": {
+    "titleLine1": "संवाद",
+    "titleLine2": "सुरू करा!",
+    "button": "आम्हाला संपर्क साधा"
+  },
+  "form": {
+    "placeholderName": "तुमचे नाव",
+    "placeholderPhone": "फोन नंबर",
+    "placeholderEmail": "ईमेल पत्ता",
+    "dropdownEnquiries": "चौकशी",
+    "optionSales": "विक्री",
+    "optionSupport": "समर्थन",
+    "optionOther": "इतर",
+    "tagline": "चला योजनांना शक्यतांमध्ये बदलूया",
+    "submitButton": "सादर करा"
+  }
+}

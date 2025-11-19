@@ -1,12 +1,14 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import projectImageUrl from "../../assets/Home/Project/Project_bg.jpg";
 
 const ProjectsHero = () => {
-  return (
-    <div className="relative w-full min-h-screen flex items-center text-white overflow-hidden 
-                    pt-32 sm:pt-36 md:pt-40 lg:pt-0 px-4 sm:px-8 lg:px-16">
+  const { t } = useTranslation('projects');
 
-      {/* Background Image */}
+  return (
+    <div id="projects" className="relative w-full min-h-screen flex items-center text-white overflow-hidden 
+                         pt-32 sm:pt-36 md:pt-40 lg:pt-0 px-4 sm:px-8 lg:px-16">
+
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${projectImageUrl}')` }}
@@ -14,25 +16,20 @@ const ProjectsHero = () => {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto">
 
-        {/* SECTION TITLE */}
         <h2 className="text-center text-3xl sm:text-5xl font-[PoppinsRegular] my-10 sm:my-16 lg:my-10 opacity-90">
-          Our Projects
+          {t('sectionTitle')}
         </h2>
 
-        {/* CONTENT BLOCK */}
         <div className="text-left">
 
-          {/* COMPLETED badge */}
           <div className="inline-block px-3 sm:px-5 py-1.5 sm:py-2 
-                          text-xs sm:text-sm font-[PoppinsRegular] 
-                          bg-[#253672] rounded-full mb-5 sm:mb-6">
-            Completed
+                           text-xs sm:text-sm font-[PoppinsRegular] 
+                           bg-[#253672] rounded-full mb-5 sm:mb-6">
+            {t('projectStatus')}
           </div>
 
-          {/* PROJECT TITLE */}
           <h1
             className="
               text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl
@@ -41,25 +38,21 @@ const ProjectsHero = () => {
               break-words
             "
           >
-            Godavari
+            {t('projectTitle.line1')}
             <br className="" />
-            Bridge
+            {t('projectTitle.line2')}
           </h1>
 
-          {/* DESCRIPTION */}
           <p className="text-base sm:text-lg md:text-xl font-[PoppinsRegular] max-w-2xl 
-                        mb-6 leading-relaxed">
-            A landmark structure built to ensure smooth, safe connectivity
-            across the Godavari River with strong engineering and lasting durability.
+                         mb-6 leading-relaxed">
+            {t('projectDescription')}
           </p>
         </div>
 
-        {/* LOCATION BADGE */}
         <div className="flex justify-start sm:justify-end md:mb-4 lg:mb-0">
           <div className="inline-flex items-center bg-[#D9D9D9] space-x-3 
-                          px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg">
+                           px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg">
 
-            {/* Pin Icon */}
             <div className="bg-[#253672] p-2 rounded-full">
               <svg
                 className="w-4 h-4 sm:w-5 sm:h-5 text-white"
@@ -75,7 +68,7 @@ const ProjectsHero = () => {
             </div>
 
             <span className="text-xs sm:text-sm md:text-lg font-[PoppinsRegular] text-[#253672]">
-              Gangapur Road, Nashik
+              {t('projectLocation')}
             </span>
           </div>
         </div>
