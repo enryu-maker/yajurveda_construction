@@ -4,19 +4,19 @@
     "socialsHeading": "हमारे सोशल मीडिया",
     "linksHeading": "त्वरित लिंक",
     "links": [
-      "होम",
-      "हमारे बारे में",
-      "सेवाएं",
-      "परियोजनाएं",
-      "प्रशंसापत्र",
-      "हमसे संपर्क करें"
-    ],
+  { "label": "होम", "path": "/" },
+  { "label": "हमारे बारे में", "path": "/about" },
+  { "label": "सेवाएँ", "path": "/#services" },
+  { "label": "प्रोजेक्ट्स", "path": "/#projects" },
+  { "label": "प्रशंसापत्र", "path": "/#testimonials" },
+  { "label": "संपर्क करें", "path": "/#contact" }
+  ],
     "servicesHeading": "सेवाएं",
     "services": [
-      "मुकदमेबाजी संपत्ति",
-      "निर्माण प्रबंधन",
-      "रियल एस्टेट विकास"
-    ],
+  { "label": "मुकदमेबाज़ी संपत्ति", "path": "/#services" },
+  { "label": "निर्माण प्रबंधन", "path": "/#services" },
+  { "label": "रियल एस्टेट विकास", "path": "/#services" }
+  ],
     "contactHeading": "संपर्क विवरण",
     "callUsLabel": "हमें कॉल करें",
     "phoneNumber": "+91 9737073390",

@@ -109,7 +109,7 @@ const AboutUsAndServices = () => {
 
         </div>
 
-        <div id='service' className="mt-20">
+        <div id='services' className="mt-20">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
             <h2 className="text-3xl sm:text-5xl font-[PoppinsRegular] text-[#253672]">
               {t('servicesSection.heading')}

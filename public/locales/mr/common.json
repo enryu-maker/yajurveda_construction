@@ -4,19 +4,19 @@
     "socialsHeading": "आमचे सोशल मीडिया",
     "linksHeading": "त्वरित दुवे",
     "links": [
-      "मुख्यपृष्ठ",
-      "आमच्याबद्दल",
-      "सेवा",
-      "प्रकल्प",
-      "प्रशंसापत्रे",
-      "आम्हाला संपर्क साधा"
-    ],
+  { "label": "मुख्यपृष्ठ", "path": "/" },
+  { "label": "आमच्याविषयी", "path": "/about" },
+  { "label": "सेवा", "path": "/#services" },
+  { "label": "प्रकल्प", "path": "/#projects" },
+  { "label": "प्रशंसापत्रे", "path": "/#testimonials" },
+  { "label": "आमच्याशी संपर्क करा", "path": "/#contact" }
+  ],
     "servicesHeading": "सेवा",
     "services": [
-      "वादग्रस्त मालमत्ता",
-      "बांधकाम व्यवस्थापन",
-      "रिअल इस्टेट विकास"
-    ],
+  { "label": "वादग्रस्त मालमत्ता", "path": "/#services" },
+  { "label": "बांधकाम व्यवस्थापन", "path": "/#services" },
+  { "label": "रिअल इस्टेट विकास", "path": "/#services" }
+  ],
     "contactHeading": "संपर्क तपशील",
     "callUsLabel": "आम्हाला कॉल करा",
     "phoneNumber": "+91 9737073390",

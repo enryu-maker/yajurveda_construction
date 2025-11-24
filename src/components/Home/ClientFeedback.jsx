@@ -20,7 +20,7 @@ const ClientFeedback = () => {
   }));
 
   return (
-    <section
+    <section id='testimonials'
       className="w-full min-h-[80vh] py-16 sm:py-20 px-4 sm:px-8 lg:px-16 text-white bg-[#4666D8]"
     >
       <div className="max-w-7xl mx-auto">

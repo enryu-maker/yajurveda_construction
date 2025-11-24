@@ -58,3 +58,15 @@
 .animated-underline:hover::after {
   width: 100%; /* Expands to full width on hover */
 }
+
+/* Hide scrollbar on all browsers */
+html, body {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE and Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0px;                  /* Chrome, Safari */
+  display: none;
+}

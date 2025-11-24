@@ -1,7 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import { HashLink } from "react-router-hash-link";
 import logo from "../../assets/Common/Logo_icon.png";
+import wordmark from "../../assets/Common/word_mark.png";
 import instagramIcon from "../../assets/Common/instagram.png";
 import facebookIcon from "../../assets/Common/facebook.png";
 import whatsappIcon from "../../assets/Common/whatsapp.png";
@@ -18,18 +20,18 @@ const Footer = () => {
     const renderLinks = (items) => (
         <ul className="space-y-2">
             {items.map((item) => (
-                <li key={item}>
-                    <a
-                        href={`/${item.toLowerCase().replace(/\s/g, "")}`}
+                <li key={item.label}>
+                    <HashLink
+                        smooth
+                        to={item.path}
                         className="text-lg font-[PoppinsRegular] hover:text-[#1e2c8b] transition"
                     >
-                        {item}
-                    </a>
+                        {item.label}
+                    </HashLink>
                 </li>
             ))}
         </ul>
     );
-
     return (
         <footer
             className="w-full py-16 px-6 sm:px-10 lg:px-20 font-sans bg-white"
@@ -44,11 +46,16 @@ const Footer = () => {
                             <img
                                 src={logo}
                                 alt="Yajurveda Logo"
-                                className="w-28 sm:w-36 object-contain"
+                                className="w-28 sm:w-42 object-contain"
                             />
-                            <h3 className="text-xl sm:text-2xl font-[PoppinsSbold] leading-tight">
+                            <img
+                                src={wordmark}
+                                alt="Yajurveda Logo"
+                                className="w-28 sm:w-42 object-contain"
+                            />
+                            {/* <h3 className="text-xl sm:text-2xl font-[PoppinsSbold] leading-tight">
                                 {t('footer.companyName')}
-                            </h3>
+                            </h3> */}
                         </div>
 
                         <h4 className="text-2xl font-[PoppinsBold] mt-4">
@@ -56,22 +63,34 @@ const Footer = () => {
                         </h4>
 
                         <div className="flex space-x-5 text-2xl">
-                            <a href="#" className="flex justify-center items-center cursor-pointer 
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.instagram.com/yajurvedgroup/" className="flex justify-center items-center cursor-pointer 
                             transition-transform duration-300 hover:-translate-y-1">
                                 <img className="w-8 object-contain" src={instagramIcon} alt="Instagram" />
                             </a>
 
-                            <a href="#" className="flex justify-center items-center cursor-pointer 
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.facebook.com/profile.php?id=61584363862965" className="flex justify-center items-center cursor-pointer 
                             transition-transform duration-300 hover:-translate-y-1">
                                 <img className="w-8 object-contain" src={facebookIcon} alt="Facebook" />
                             </a>
 
-                            <a href="#" className="flex justify-center items-center cursor-pointer 
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="#" className="flex justify-center items-center cursor-pointer 
                             transition-transform duration-300 hover:-translate-y-1">
                                 <img className="w-8 object-contain" src={whatsappIcon} alt="WhatsApp" />
                             </a>
 
-                            <a href="mailto:contact@yajurved" className="flex justify-center items-center cursor-pointer 
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="mailto:contact@yajurved" className="flex justify-center items-center cursor-pointer 
                             transition-transform duration-300 hover:-translate-y-1">
                                 <img className="w-9 object-contain" src={gmailIcon} alt="Gmail" />
                             </a>

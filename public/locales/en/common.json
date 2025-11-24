@@ -4,19 +4,19 @@
     "socialsHeading": "Our Socials",
     "linksHeading": "Quick Links",
     "links": [
-      "Home",
-      "About",
-      "Services",
-      "Projects",
-      "Testimonials",
-      "Contact Us"
-    ],
+  { "label": "Home", "path": "/" },
+  { "label": "About", "path": "/about" },
+  { "label": "Services", "path": "/#services" },
+  { "label": "Projects", "path": "/#projects" },
+  { "label": "Testimonials", "path": "/#testimonials" },
+  { "label": "Contact Us", "path": "/#contact" }
+  ],
     "servicesHeading": "Services",
     "services": [
-      "Litigation Property",
-      "Construction Management",
-      "Real Estate Development"
-    ],
+  { "label": "Litigation Property", "path": "/#services" },
+  { "label": "Construction Management", "path": "/#services" },
+  { "label": "Real Estate Development", "path": "/#services" }
+  ],
     "contactHeading": "Contact Details",
     "callUsLabel": "Call Us",
     "phoneNumber": "+91 9737073390",

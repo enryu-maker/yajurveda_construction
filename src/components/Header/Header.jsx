@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Logo from "../../assets/Common/Logo.png";
+import Logo2 from "../../assets/Common/Logo_2.png";
+
 import { Link, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function Header() {
+
+  const { pathname } = useLocation();
+
+  const isHome = pathname === "/";
+  const logoSrc = isHome ? Logo : Logo2;
+
+
+
   const { t } = useTranslation('common');
   const [open, setOpen] = useState(false);
 
@@ -46,7 +57,7 @@ function Header() {
   const navItems = [
     { key: 'home', href: '/' },
     { key: 'about', href: '/about' },
-    { key: 'services', href: '/#service' },
+    { key: 'services', href: '/#services' },
     { key: 'projects', href: '/#projects' },
   ];
 
@@ -65,7 +76,7 @@ function Header() {
         {/* Logo */}
         <div>
           {/* NOTE: If your logo is color-sensitive, you may need to use a conditional logo source here */}
-          <img className="w-24" src={Logo} alt="logo" />
+          <img className="w-24" src={logoSrc} alt="logo" />
         </div>
 
         {/* Desktop Nav */}
@@ -76,31 +87,36 @@ function Header() {
           items-center
         `}>
           {navItems.map(item => (
-            <a
+            <HashLink
               key={item.key}
               // Changed hover to opacity for better contrast management on both light/dark BG
               className="mx-4 hover:opacity-90 transition duration-150"
-              href={item.href}
+              smooth
+              to={item.href}
+
             >
               {t(`header.nav.${item.key}`)}
-            </a>
+            </HashLink>
           ))}
         </nav>
 
         {/* Desktop Button - (Kept static, assuming dark button works on both backgrounds) */}
-        <button className={`
-          ${currentPath === '/' ? 'bg-[#253672]' : 'bg-white'}
-          ${currentPath === '/' ? 'text-white' : 'text-[#253672]'}
-          ${currentPath === '/' ? 'hover:bg-[#1a2555]' : 'hover:bg-white/90'}
-          hidden md:block
-          py-2 px-6 
-          rounded-full 
-          transition duration-150
-        `}>
-          <a href="/#contact">
+        <HashLink smooth to="/#contact">
+          <button
+            className={`
+      ${currentPath === '/' ? 'bg-[#253672]' : 'bg-white'}
+      ${currentPath === '/' ? 'text-white' : 'text-[#253672]'}
+      ${currentPath === '/' ? 'hover:bg-[#1a2555]' : 'hover:bg-white/90'}
+      hidden md:block
+      py-2 px-6 
+      rounded-full 
+      transition duration-150
+    `}
+          >
             {t('header.button')}
-          </a>
-        </button>
+          </button>
+        </HashLink>
+
 
         {/* Mobile Menu Button (Hamburger) */}
         <button
