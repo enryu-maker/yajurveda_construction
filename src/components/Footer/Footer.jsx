@@ -141,8 +141,6 @@ const Footer = () => {
                         <p className="font-[PoppinsSbold] mb-1">{t('footer.addressLabel')}</p>
                         <p className="text-lg font-[PoppinsRegular] mb-4 leading-snug">
                             {t('footer.addressLine1')}
-                            <br />
-                            {t('footer.addressLine2')}
                         </p>
 
                         <p className="font-[PoppinsSbold] mb-1">{t('footer.hoursLabel')}</p>

@@ -13,8 +13,6 @@ function Header() {
   const isHome = pathname === "/";
   const logoSrc = isHome ? Logo : Logo2;
 
-
-
   const { t } = useTranslation('common');
   const [open, setOpen] = useState(false);
 
@@ -104,14 +102,14 @@ function Header() {
         <HashLink smooth to="/#contact">
           <button
             className={`
-      ${currentPath === '/' ? 'bg-[#253672]' : 'bg-white'}
-      ${currentPath === '/' ? 'text-white' : 'text-[#253672]'}
-      ${currentPath === '/' ? 'hover:bg-[#1a2555]' : 'hover:bg-white/90'}
-      hidden md:block
-      py-2 px-6 
-      rounded-full 
-      transition duration-150
-    `}
+            ${currentPath === '/' ? 'bg-[#253672]' : 'bg-white'}
+            ${currentPath === '/' ? 'text-white' : 'text-[#253672]'}
+            ${currentPath === '/' ? 'hover:bg-[#1a2555]' : 'hover:bg-white/90'}
+            hidden md:block
+            py-2 px-6 
+            rounded-full 
+            transition duration-150
+          `}
           >
             {t('header.button')}
           </button>
@@ -169,7 +167,8 @@ function Header() {
           ))}
 
           {/* Mobile Button - (Kept static, assuming dark button works on both backgrounds) */}
-          <button className={`
+          <HashLink smooth to="/#contact">
+            <button className={`
             ${currentPath === '/' ? 'bg-[#253672]' : 'bg-white'}
             ${currentPath === '/' ? 'text-white' : 'text-[#253672]'}
             py-2 px-6 
@@ -178,12 +177,11 @@ function Header() {
             hover:bg-[#1a2555]
             transition duration-150
           `}
-            onClick={() => setOpen(false)}
-          >
-            <a href="#contact">
+              onClick={() => setOpen(false)}
+            >
               {t('header.button')}
-            </a>
-          </button>
+            </button>
+          </HashLink>
         </div>
       )}
     </header>

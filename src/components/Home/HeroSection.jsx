@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import skylineImageUrl from "../../assets/Home/Hero/vector3.png";
 import HeroBg from "../../assets/Home/Hero/Hero_bg.jpg";
+import { HashLink } from "react-router-hash-link";
 
 const HeroSection = () => {
   const { t } = useTranslation('home-hero');
@@ -52,8 +53,9 @@ const HeroSection = () => {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <button
-                className="
+              <HashLink smooth to="/#services">
+                <button
+                  className="
                   lg:absolute
                   bottom-0
                   lg:-right-10
@@ -66,9 +68,10 @@ const HeroSection = () => {
                   hover:bg-white hover:text-[#0a1128]
                   transition duration-300
                 "
-              >
-                {t('exploreButton')}
-              </button>
+                >
+                  {t('exploreButton')}
+                </button>
+              </HashLink>
             </div>
           </div>
 
@@ -89,29 +92,31 @@ const HeroSection = () => {
               {t('rightSide.overlayText')}
             </p>
 
-            <div
-              className="
+            <HashLink smooth to="/#projects">
+              <div
+                className="
                 absolute bottom-6 right-6 
                 p-3 bg-white/10 
                 border-2 border-white rounded-full 
                 cursor-pointer pointer-events-auto
                 group hover:bg-white transition duration-300
               "
-            >
-              <svg
-                className="w-5 h-5 text-white transform rotate-225 group-hover:text-[#0a1128]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
+                <svg
+                  className="w-5 h-5 text-white transform rotate-225 group-hover:text-[#0a1128]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </div>
+            </HashLink>
           </div>
         </div>
       </div>
