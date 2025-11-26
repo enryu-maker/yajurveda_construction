@@ -9,7 +9,7 @@
   { "label": "Services", "path": "/#services" },
   { "label": "Projects", "path": "/#projects" },
   { "label": "Testimonials", "path": "/#testimonials" },
-  { "label": "Contact Us", "path": "/#contact" }
+  { "label": "Contact ", "path": "/#contact" }
   ],
     "servicesHeading": "Services",
     "services": [
@@ -35,8 +35,9 @@
     "nav": {
       "home": "Home",
       "about": "About",
-      "projects": "Projects",
       "services": "Services",
+      "ourCompany": "Our Company",
+      "projects": "Projects",
       "contact": "Contact Us"
     },
     "button": "Get In Touch"

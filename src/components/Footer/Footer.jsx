@@ -8,8 +8,32 @@ import instagramIcon from "../../assets/Common/instagram.png";
 import facebookIcon from "../../assets/Common/facebook.png";
 import whatsappIcon from "../../assets/Common/whatsapp.png";
 import gmailIcon from "../../assets/Common/gmail.png";
+import { useLocation } from "react-router";
 
 const Footer = () => {
+
+    const location = useLocation();
+
+    const currentPathRaw = location.pathname || '/';
+    // normalize path: lowercase and remove trailing slash
+    const currentPath = currentPathRaw.toLowerCase().replace(/\/+$/, '') || '/';
+
+
+    // 2. Define color map based on route
+    const colorMap = {
+        // Home page background color (Example: Dark Blue from Hero)
+        '/': 'white',
+
+        // About page background color (Example: Lighter Blue/Gray)
+        '/about': '#f0f2f5',
+
+        '/ourcompany': '#f0f2f5',
+
+    };
+
+    // 3. Determine the final background color
+    const bgColor = colorMap[currentPath] ?? 'white';
+
     const { t } = useTranslation('common');
     const darkTextColor = "#253672";
 
@@ -34,8 +58,8 @@ const Footer = () => {
     );
     return (
         <footer
-            className="w-full py-16 px-6 sm:px-10 lg:px-20 font-sans bg-white"
-            style={{ color: darkTextColor }}
+            className="w-full py-16 px-6 sm:px-10 lg:px-20  "
+            style={{ backgroundColor: bgColor, color: darkTextColor }}
         >
             <div className="max-w-7xl mx-auto">
 
@@ -82,7 +106,7 @@ const Footer = () => {
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                href="https://wa.me/919327234012"  className="flex justify-center items-center cursor-pointer 
+                                href="https://wa.me/919327234012" className="flex justify-center items-center cursor-pointer 
                             transition-transform duration-300 hover:-translate-y-1">
                                 <img className="w-8 object-contain" src={whatsappIcon} alt="WhatsApp" />
                             </a>

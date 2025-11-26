@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import HomePage from './pages/HomePage'
 import PopupForm from "./components/Form/PopupForm";
 import AboutPage from './pages/AboutPage'
+import OurCompanyPage from './pages/OurCompanyPage';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import ScrollToTop from './ScrollToTop';
 
@@ -54,6 +55,10 @@ const App = () => {
 
           {/* Route for the About Page (Path: /about) */}
           <Route path="/about" element={<AboutPage />} />
+
+          {/* Route for the Our Company Page (Path: /ourCompany) */}
+          <Route path="/ourcompany" element={<OurCompanyPage />} />
+
         </Routes>
 
         {/* 3. Modal Renders (Outside the Routes, so it persists across pages) */}

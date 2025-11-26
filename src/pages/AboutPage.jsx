@@ -12,7 +12,7 @@ const AboutUs = () => {
     // Single shared color variable
     const primaryBlue = "#253672";
 
-    const coreValues = t("coreValues", { returnObjects: true });
+    const howToWork = t("howToWork", { returnObjects: true });
     const expertiseRoles = t("expertise", { returnObjects: true });
     const labels = t("about_page.labels", { returnObjects: true });
 
@@ -57,9 +57,9 @@ const AboutUs = () => {
                 </div>
 
                 {/* --- VISION & MISSION SECTION START --- */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
 
-                    {/* VISION */}
+                    
                     <div className="p-8 rounded-2xl shadow-xl transition-all hover:shadow-2xl border border-black/10">
                         <h2
                             className="text-3xl font-[PoppinsSbold] mb-4 border-b-2 pb-2"
@@ -73,7 +73,7 @@ const AboutUs = () => {
                         </p>
                     </div>
 
-                    {/* MISSION */}
+                   
                     <div className="p-8 rounded-2xl shadow-xl transition-all hover:shadow-2xl border border-black/10">
                         <h2
                             className="text-3xl font-[PoppinsSbold] mb-4 border-b-2 pb-2"
@@ -86,7 +86,7 @@ const AboutUs = () => {
                             {t("about_page.visionMission.mission")}
                         </p>
                     </div>
-                </div>
+                </div> */}
                 {/* --- VISION & MISSION SECTION END --- */}
 
                 <hr className="w-2/3 mx-auto border-black/20 mb-20" />
@@ -99,14 +99,14 @@ const AboutUs = () => {
                 </h2>
 
                 {/* CORE VALUES */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-20">
-                    {coreValues.map((item, index) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-20">
+                    {howToWork.map((item, index) => (
                         <div
                             key={index}
                             className="p-6 rounded-2xl shadow-lg text-center border border-white/20 hover:scale-105 transition-transform"
                             style={{ backgroundColor: primaryBlue }}
                         >
-                            <h3 className="text-xl sm:text-2xl font-[PoppinsRegular] mb-2 text-white">{item.title}</h3>
+                            <h3 className="text-xl sm:text-2xl font-[PoppinsRegular] mb-4 text-white">{item.title}</h3>
                             <p className="text-xs sm:text-sm opacity-90 font-[PoppinsRegular] text-white">{item.description}</p>
                         </div>
                     ))}

@@ -5,34 +5,35 @@
     "heading1_bold": "care",
     "heading2_beforeBold": "Delivered with",
     "heading2_bold": "precision",
-    "paragraph1": "Founded in 2026, Yajurveda Construction began as a small real estate development group in Nashik. Over the years, we have grown into a multi-disciplinary construction and property development company, serving clients across India.",
-    "paragraph2_intro": "What started as a local development initiative has now evolved into a trusted brand in:",
+    "paragraph1": "Founded in 2025 in Nashik, Maharashtra, Yajurveda Construction began as a specialized Real Estate Investment and Development firm. Our early focus on contract and land development for local businesses quickly expanded to include Re-Development and major portfolio projects.",
+    "paragraph2_intro": "Today, we are a multidisciplinary company dedicated to delivering sophisticated development opportunities across India. Our core expertise includes:",
     "listItems": {
-      "item1": "Construction & Infrastructure",
-      "item2": "Land Development",
-      "item3": "Re-development Projects",
-      "item4": "Commercial & Industrial Parks",
-      "item5": "Agricultural and Natural Villa Projects",
-      "item6": "Real Estate Investment Support & Consultancy"
+      "item1": "Real Estate Investment & Development",
+      "item2": "Contract & Land Development / Re-Development",
+      "item3": "Commercial (IT/Industrial), Agriculture, and Natural Home Villa Projects"
     },
-    "paragraph3": "Our growth is fueled by our commitment to transparency, innovation, long-term vision, and customer-first values.",
+    "paragraph3": "We are committed to continuous research and development, aiming to become a self-market leader in the Indian tourism and real estate industry.",
     "learnMoreButton": "Learn More"
-  },
+    },
   "servicesSection": {
     "heading": "Our Services",
     "offerButton": "What We Offer",
     "cards": [
       {
-        "title": "Real Estate Development",
-        "description": "We deliver high-quality residential, commercial, industrial, and land development projects focused on long-term value. From planning and designing to execution and handover, our team ensures structural excellence, premium build quality, and timely delivery — helping clients invest confidently and live securely."
+        "title": "All Types Financial Service",
+        "description": "Comprehensive financial services including loan acquisition, corpus fund management, tax planning (GST/Income Tax), and expert financial modeling for redevelopment projects."
       },
       {
-        "title": "Litigation Property",
-        "description": "We provide expert assistance for properties involved in legal disputes or documentation issues. Whether you're looking to resolve a conflict, sell a disputed property, or verify legal status, our team ensures safe, transparent, and reliable guidance throughout the process."
+        "title": "Property Related Work and Documents",
+        "description": "Handling all essential property documentation, title verification, legal compliance checks, and securing government approvals (e.g., MahaRERA) necessary for development and transfer."
       },
       {
-        "title": "Construction Management",
-        "description": "From budgeting and material procurement to vendor coordination, on-site supervision and quality checks, we manage every stage of construction efficiently. Our structured approach ensures your project runs smoothly, finishes on time, and stays within the planned budget — with complete transparency at every step."
+        "title": "All Types Construction & Developers",
+        "description": "End-to-end management of all construction activities, from demolition and structural work to final finishing, coordinating large projects with certified builders and material suppliers."
+      },
+      {
+        "title": "Property Litigation Matters Consultancy",
+        "description": "Providing expert legal consultancy and representation to resolve property disputes, check legal status, draft development agreements, and ensure safe, reliable legal guidance."
       }
     ]
   }

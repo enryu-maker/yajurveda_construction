@@ -5,6 +5,7 @@ import realEstateImage from "../../assets/Home/About/real_estate.jpg";
 import litigationImage from "../../assets/Home/About/litigation.jpg";
 import constructionImage from "../../assets/Home/About/construction.jpg";
 import { Link } from "react-router";
+import ServicesSection from "./ServicesSection";
 
 const AboutUsAndServices = () => {
   const { t } = useTranslation('about');
@@ -12,7 +13,7 @@ const AboutUsAndServices = () => {
   // Retrieve translated services array
   const translatedServices = t('servicesSection.cards', { returnObjects: true });
 
-  const staticImages = [realEstateImage, litigationImage, constructionImage];
+  const staticImages = [realEstateImage, litigationImage, constructionImage, constructionImage];
 
   // Combine translated text with static image paths
   const services = translatedServices.map((service, index) => ({
@@ -109,42 +110,8 @@ const AboutUsAndServices = () => {
 
         </div>
 
-        <div id='services' className="mt-20">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
-            <h2 className="text-3xl sm:text-5xl font-[PoppinsRegular] text-[#253672]">
-              {t('servicesSection.heading')}
-            </h2>
+        <ServicesSection services={services} t={t} />
 
-            <button className="px-6 py-2 text-sm border border-[#253672] rounded-full text-[#253672] font-[PoppinsRegular] hover:bg-gray-200 transition">
-              {t('servicesSection.offerButton')}
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-[#253672] rounded-xl shadow-lg overflow-hidden flex flex-col"
-              >
-                <div className="h-48 w-full overflow-hidden p-4">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                </div>
-
-                <div className="p-6 text-white flex flex-col">
-                  <h3 className="text-2xl font-[PoppinsSbold]">
-                    {service.title}
-                  </h3>
-                  <hr className="my-4 border-white/40" />
-                  <p className="text-gray-300">{service.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
       <div className="absolute bottom-8 right-8 p-3 bg-[#253672] rounded-full cursor-pointer hover:bg-white transition group">

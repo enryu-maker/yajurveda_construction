@@ -35,6 +35,11 @@
     src: url(fonts/Poppins/Poppins-Light.ttf);
 }
 
+@font-face {
+    font-family: PoppinsItalic;
+    src: url(fonts/Poppins/Poppins-Italic.ttf);
+}
+
 
 /* In your global CSS file (e.g., src/index.css or src/App.css) */
 

@@ -45,7 +45,7 @@ const ContactForm = () => {
   return (
     <div
       id="contact"
-      className="w-full min-h-screen flex items-center justify-center rounded-b-4xl py-16 sm:py-22 px-4 sm:px-8 lg:px-16 text-white"
+      className="w-full min-h-screen flex items-center justify-center rounded-4xl py-16 sm:py-22 px-4 sm:px-8 lg:px-16 text-white"
       style={gradientStyle}
     >
       <div

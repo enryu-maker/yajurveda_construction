@@ -56,7 +56,8 @@ function Header() {
     { key: 'home', href: '/' },
     { key: 'about', href: '/about' },
     { key: 'services', href: '/#services' },
-    { key: 'projects', href: '/#projects' },
+    { key: 'ourCompany', href: '/ourCompany' },
+    // { key: 'projects', href: '/#projects' },
   ];
 
   return (
