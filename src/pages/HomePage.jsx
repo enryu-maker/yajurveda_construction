@@ -21,27 +21,27 @@ const HomePage = () => {
       <Helmet>
         {/* Primary SEO Tags */}
         <title>Yajurveda Construction Pvt. Ltd. | {tagline}</title>
-        <meta 
-          name="description" 
+        <meta
+          name="description"
           content={description}
         />
-        <meta 
-          name="keywords" 
-          content={keywords} 
+        <meta
+          name="keywords"
+          content={keywords}
         />
-        
+
         {/* Open Graph Tags for Social Media Sharing */}
         <meta property="og:title" content="Yajurveda Construction Pvt. Ltd." />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        
+
         {/* IMPORTANT: Update these with your live site details */}
         <meta property="og:url" content="https://www.yajurvedaconstruction.com" />
-        <meta property="og:image" content="https://www.yajurvedaconstruction.com/Yajurveda_Logo.svg" /> 
-        
+        <meta property="og:image" content="https://www.yajurvedaconstruction.com/Yajurveda_Logo.svg" />
+
         {/* Canonical Link */}
         <link rel="canonical" href="https://www.yajurvedaconstruction.com" />
-        
+
         {/* Ensure HTML language is set for accessibility and SEO */}
         <html lang="en" />
       </Helmet>
@@ -49,8 +49,8 @@ const HomePage = () => {
       <Header />
       <HeroSection />
       <AboutUsAndServices />
-      <ProjectsHero />
-      <ClientFeedback />
+      {/* <ProjectsHero /> */}
+      {/* <ClientFeedback /> */}
       <ContactForm />
       <Footer />
 
