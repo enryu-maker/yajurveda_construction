@@ -4,7 +4,7 @@ import backgroundImage from "../../assets/Home/About/About_bg.jpg";
 import realEstateImage from "../../assets/Home/About/real_estate.jpg";
 import litigationImage from "../../assets/Home/About/litigation.jpg";
 import constructionImage from "../../assets/Home/About/construction.jpg";
-import financialImage from "../../assets/Home/About/Financial.jpg";
+import financialImage from "../../assets/Home/About/financial.jpg";
 
 import { Link } from "react-router";
 import ServicesSection from "./ServicesSection";

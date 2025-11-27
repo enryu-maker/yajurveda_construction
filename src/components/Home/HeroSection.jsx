@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import outlineImageUrl from "../../assets/Home/Hero/vector1.png";
 import skylineImageUrl from "../../assets/Home/Hero/vector3.png";
 import HeroBg from "../../assets/Home/Hero/Hero_bg.jpg";
 import { HashLink } from "react-router-hash-link";
@@ -34,9 +35,25 @@ const HeroSection = () => {
           </p>
 
           <div className="relative">
-            <div className=" my-4  ">
+            <div
+              className="my-4 relative"
+            >
+              {/* Background Image */}
+              <div
+                className="
+                hidden xl:block   /* show only on lg and xl */
+                absolute inset-0 
+                bg-no-repeat bg-contain bg-center z-50
+              "
+                style={{
+                  backgroundImage:  `url(${outlineImageUrl})`,
+                }}
+              ></div>
+
+              {/* Text Content */}
               <h1
                 className="
+                relative z-10
                 text-4xl md:text-6xl lg:text-7xl 
                 py-4 px-8 sm:px-12 lg:px-10
                 leading-snug mb-6
@@ -51,6 +68,8 @@ const HeroSection = () => {
                 {t('heading.line3')}
               </h1>
             </div>
+
+
 
             <div className="flex justify-center lg:justify-end">
               <HashLink smooth to="/#services">
