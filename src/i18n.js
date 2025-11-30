@@ -9,7 +9,7 @@ i18n
     lng: 'en',
     fallbackLng: 'en',
     
-    ns: ['common', 'home-hero', 'about', 'projects', 'feedback', 'contact', 'about_page', "ourcompany_page"], 
+    ns: ['common', 'home-hero', 'about', 'projects', 'feedback', 'contact', 'about_page', "ourcompany_page", "financial_plan"], 
     defaultNS: 'common', 
 
     // Preload the most critical namespaces to avoid initial loading flicker

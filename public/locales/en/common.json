@@ -8,6 +8,7 @@
   { "label": "About", "path": "/about" },
   { "label": "Services", "path": "/#services" },
   { "label": "Our Company", "path": "/ourcompany" },
+  { "label": "Financial Plan", "path": "/financialplan" },
   { "label": "Contact ", "path": "/#contact" }
   ],
     "servicesHeading": "Services",
@@ -36,6 +37,7 @@
       "about": "About",
       "services": "Services",
       "ourCompany": "Our Company",
+      "financialplan": "Financial Plan",
       "projects": "Projects",
       "contact": "Contact Us"
     },

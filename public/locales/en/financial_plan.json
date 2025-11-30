@@ -1,0 +1,43 @@
+{
+  "pageTitle": "Financial Plan: Real Estate",
+  "subHeading": "The Strategic Approach to Diversified, Professionally Managed Commercial Investment.",
+  "section1": {
+    "title": "Key Benefits",
+    "card1": {
+      "title": "Investment Access & Costs",
+      "benefits": [
+        "Low Entry Point & High Liquidity: Just like Market you can buy and sell units at will. Min. investment.",
+        "No Brokerage / No Commission / No Property Search / No Time and Money West."
+      ],
+      "lockingTimeTitle": "Locking Time",
+      "lockingTimeValue": "Maturity 24 Month's"
+    },
+    "card2": {
+      "title": "Diversification & Yield",
+      "strategy": [
+        "Diversification Exposure to Real Estate investments",
+        "RE can be spread across Land Developments",
+        "As compared to Under-Construction Properties or managing commercial properties Income Producing properties Good & Stable Returns.",
+        "Commercial RE Rental Yield (7-10%) plus capital appreciation"
+      ]
+    }
+  },
+  "section2": {
+    "title": "Investment Stability & Management",
+    "card1": {
+      "title": "Stability & Returns",
+      "points": [
+        "RE can be spread across Land Developments",
+        "As compared to Under-Construction Properties or managing commercial properties Income Producing properties Good & Stable Returns.",
+        "Commercial RE Rental Yield (7-10%) plus capital appreciation"
+      ]
+    },
+    "card2": {
+      "title": "Professional Management",
+      "points": [
+        "Lesser volatile than corporate profits, on Average Rent, Occupancy Levels, Tenant Profile, Buying and Selling Rate Professionally Managed Like on thorough market research before making buying, selling and renting decisions",
+        "Individuals don't have to take hassles of managing tenants & maintaining property."
+      ]
+    }
+  }
+}

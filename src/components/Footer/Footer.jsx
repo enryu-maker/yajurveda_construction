@@ -25,6 +25,7 @@ const Footer = () => {
         '/': 'white',
         '/about': '#f0f2f5',
         '/ourcompany': '#f0f2f5',
+        '/financialplan': '#f0f2f5',
     };
 
     // 3. Determine the final background color

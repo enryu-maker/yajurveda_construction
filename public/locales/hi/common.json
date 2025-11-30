@@ -8,6 +8,7 @@
   { "label": "हमारे बारे में", "path": "/about" },
   { "label": "सेवाएँ", "path": "/#services" },
   { "label": "हमारी कंपनी", "path": "/ourcompany" },
+  { "label": "वित्तीय योजना", "path": "/financialplan" },
   { "label": "संपर्क करें", "path": "/#contact" }
   ],
     "servicesHeading": "सेवाएं",
@@ -36,6 +37,7 @@
       "about": "हमारे बारे में",
       "services": "सेवाएं",
       "ourCompany": "हमारी कंपनी",
+      "financialplan": "वित्तीय योजना",
       "projects": "परियोजनाएं",
       "contact": "हमसे संपर्क करें"
     },

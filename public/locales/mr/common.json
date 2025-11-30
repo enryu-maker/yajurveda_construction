@@ -8,7 +8,7 @@
   { "label": "आमच्याविषयी", "path": "/about" },
   { "label": "सेवा", "path": "/#services" },
   { "label": "आमची कंपनी", "path": "/ourcompany" },
-  { "label": "प्रशंसापत्रे", "path": "/#testimonials" },
+  { "label": "आर्थिक योजना", "path": "/financialplan" },
   { "label": "आमच्याशी संपर्क करा", "path": "/#contact" }
   ],
     "servicesHeading": "सेवा",
@@ -37,6 +37,7 @@
       "about": "आमच्याबद्दल",
       "services": "सेवा",
       "ourCompany": "आमची कंपनी",
+      "financialplan": "आर्थिक योजना",
       "projects": "प्रकल्प",
       "contact": "आम्हाला संपर्क साधा"
     },

@@ -46,7 +46,7 @@ const HeroSection = () => {
                 bg-no-repeat bg-contain bg-center z-50
               "
                 style={{
-                  backgroundImage:  `url(${outlineImageUrl})`,
+                  backgroundImage: `url(${outlineImageUrl})`,
                 }}
               ></div>
 
@@ -69,29 +69,33 @@ const HeroSection = () => {
               </h1>
             </div>
 
-
-
             <div className="flex justify-center lg:justify-end">
-              <HashLink smooth to="/#services">
+              <HashLink
+                smooth
+                to="#services"
+                scroll={(el) => el.scrollIntoView({ behavior: "smooth", block: "start" })}
+              >
                 <button
                   className="
-                  lg:absolute
-                  bottom-0
-                  lg:-right-10
-                  xl:right-0
-                  xl:bottom-12
-                  px-10 py-3 text-xl font-[PoppinsElight]
-                  bg-white/10 
-                  border-2 border-white 
-                  rounded-2xl
-                  hover:bg-white hover:text-[#0a1128]
-                  transition duration-300
-                "
+                    z-50
+                    lg:absolute
+                    bottom-0
+                    lg:-right-10
+                    xl:right-0
+                    xl:bottom-12
+                    px-10 py-3 text-xl font-[PoppinsElight]
+                    bg-white/10 
+                    border-2 border-white 
+                    rounded-2xl
+                    hover:bg-white hover:text-[#0a1128]
+                    transition duration-300
+                  "
                 >
-                  {t('exploreButton')}
+                  {t("exploreButton")}
                 </button>
               </HashLink>
             </div>
+
           </div>
 
           <p className="text-sm md:text-lg mt-4 max-w-lg font-[PoppinsElight] text-center lg:text-left mx-auto lg:mx-0">
@@ -111,7 +115,7 @@ const HeroSection = () => {
               {t('rightSide.overlayText')}
             </p>
 
-            <HashLink smooth to="/#projects">
+            <HashLink smooth to="#">
               <div
                 className="
                 absolute bottom-6 right-6 
