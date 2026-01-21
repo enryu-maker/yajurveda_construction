@@ -6,6 +6,7 @@ import OurCompanyPage from './pages/OurCompanyPage';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import ScrollToTop from './ScrollToTop';
 import FinancialPlanPage from './pages/FinancialPlanPage';
+import InstagramFeedPage from './pages/InstagramFeedPage';
 
 const App = () => {
 
@@ -61,6 +62,9 @@ const App = () => {
           <Route path="/ourcompany" element={<OurCompanyPage />} />
 
           <Route path="/financialplan" element={<FinancialPlanPage />} />
+
+          {/* Route for Instagram Feed Page */}
+          <Route path="/instagram-feed" element={<InstagramFeedPage />} />
 
 
         </Routes>

@@ -7,6 +7,7 @@ import ProjectsHero from '../components/Home/ProjectsHero'
 import ClientFeedback from '../components/Home/ClientFeedback'
 import ContactForm from '../components/Home/ContactForm'
 import Footer from '../components/Footer/Footer'
+import SocialGallery from '../components/Home/SocialGallery'
 
 const HomePage = () => {
 
@@ -51,6 +52,7 @@ const HomePage = () => {
       <AboutUsAndServices />
       {/* <ProjectsHero /> */}
       {/* <ClientFeedback /> */}
+      <SocialGallery />
       <ContactForm />
       <Footer />
 
