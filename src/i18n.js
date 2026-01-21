@@ -8,17 +8,17 @@ i18n
   .init({
     lng: 'en',
     fallbackLng: 'en',
-    
-    ns: ['common', 'home-hero', 'about', 'projects', 'feedback', 'contact', 'about_page', "ourcompany_page", "financial_plan"], 
-    defaultNS: 'common', 
+
+    ns: ['common', 'home-hero', 'about', 'projects', 'feedback', 'contact', 'about_page', "ourcompany_page", "financial_plan", "social"],
+    defaultNS: 'common',
 
     // Preload the most critical namespaces to avoid initial loading flicker
     preload: ['common', 'hero'],
 
     interpolation: {
-      escapeValue: false, 
+      escapeValue: false,
     },
-    
+
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     }

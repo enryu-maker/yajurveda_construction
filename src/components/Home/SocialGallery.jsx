@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 const SocialGallery = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation('social');
 
   // Helper to ensure we use the correct embed URL format for iframes
   const getEmbedUrl = (url) => {
@@ -44,10 +46,10 @@ const SocialGallery = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-[PoppinsBold] text-[#253672] sm:text-4xl">
-            Follow Us on Instagram
+            {t('title')}
           </h2>
           <p className="mt-4 text-lg text-[#253672] font-[PoppinsRegular]">
-            Check out our latest updates, tours, and behind-the-scenes moments.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -76,7 +78,7 @@ const SocialGallery = () => {
             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-[PoppinsMedium] rounded-md text-white bg-brand-blue hover:bg-opacity-90 md:py-4 md:text-lg md:px-10 transition-all duration-300 shadow-md hover:shadow-lg"
             style={{ backgroundColor: '#4666D8' }}
           >
-            See More on Our Gallery
+            {t('button')}
           </button>
         </div>
       </div>

@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 
 const InstagramFeedPage = () => {
+    const { t } = useTranslation('social');
 
     // Auto-scroll to top when page opens
     useEffect(() => {
@@ -60,18 +62,18 @@ const InstagramFeedPage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl text-[#253672] font-[PoppinsBold] sm:text-5xl ">
-                            Our Instagram Gallery
+                            {t('feed_title')}
                         </h1>
                         <p className="mt-4 text-xl text-[#253672] max-w-3xl mx-auto font-[PoppinsRegular]">
-                            Follow along with our journey. See our latest projects, walkthroughs, and more on Instagram.
+                            {t('feed_subtitle')}
                         </p>
                         <a
-                            href="https://www.instagram.com/"
+                            href="https://www.instagram.com/yajurvedgroup/"
                             target="_blank"
                             rel="noreferrer"
                             className="inline-block mt-6 text-[#253672] font-[PoppinsMedium] hover:underline"
                         >
-                            @yajurvedaconstruction
+                            @yajurvedgroup
                         </a>
                     </div>
 
