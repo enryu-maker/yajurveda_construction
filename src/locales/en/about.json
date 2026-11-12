@@ -1,0 +1,44 @@
+{
+  "aboutSection": {
+    "aboutUsButton": "About Us",
+    "heading1_beforeBold": "Crafted with",
+    "heading1_bold": "care",
+    "heading2_beforeBold": "Delivered with",
+    "heading2_bold": "precision",
+    "paragraph1": "Founded in 2025 in Nashik, Maharashtra, Yajurved Construction helps housing societies and landowners redevelop and build, and handles the paperwork that comes with it.",
+    "paragraph2_intro": "We bring these services together under one roof:",
+    "listItems": {
+      "item1": "Housing society redevelopment and construction",
+      "item2": "Property title verification, documentation and MahaRERA approvals",
+      "item3": "Property litigation and financial consultancy"
+    },
+    "paragraph3": "We are a young company, so we earn trust the slow way: clear process, written timelines and no claims we cannot show you.",
+    "learnMoreButton": "Learn More"
+  },
+  "servicesSection": {
+    "heading": "Our Services",
+    "offerButton": "What We Offer",
+    "cards": [
+      {
+        "title": "Construction & Society Redevelopment",
+        "description": "From feasibility and member consent to NMC approvals, demolition, construction and handover of new flats."
+      },
+      {
+        "title": "Title Verification & Documentation",
+        "description": "30-year title search, 7/12 extract and mutation checks, encumbrance search and registration of every document."
+      },
+      {
+        "title": "MahaRERA Registration",
+        "description": "Eligibility check, full document set, project bank account, and quarterly progress reports after registration."
+      },
+      {
+        "title": "Property Litigation Consultancy",
+        "description": "Document review, plain-language options and coordination with property advocates for title, partition and builder disputes."
+      },
+      {
+        "title": "Financial Consultancy",
+        "description": "Feasibility models, self-redevelopment loans, corpus and rent planning, and GST and income tax planning with CAs."
+      }
+    ]
+  }
+}

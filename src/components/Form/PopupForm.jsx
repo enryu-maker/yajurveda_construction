@@ -1,224 +1,90 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { TEL } from "../../contact";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xgvdllej";
+const field = "w-full mt-1 p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#253672] outline-none text-base font-[PoppinsRegular]";
+
+// Short, translated call-back request. Closes on Esc or backdrop click.
 export default function PopupForm({ onClose }) {
+  const { t } = useTranslation("popup");
+  const [status, setStatus] = useState(null); // null | sending | success | error
+  const firstField = useRef(null);
+
   useEffect(() => {
-    // Disable background scroll
     document.body.style.overflow = "hidden";
-
+    firstField.current?.focus();
+    const onKey = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
     return () => {
-      // Re-enable scroll when component unmounts
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
     };
-  }, []);
-
-  const [showModal, setShowModal] = useState(true);
-  const [formData, setFormData] = useState({
-    name: "",
-    number: "",
-    location: "",
-    pincode: "",
-    email: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(null); // 'success', 'error', or null
-
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xgvdllej";
-
-  const handleChange = (e) => {
-    setFormData((s) => ({ ...s, [e.target.name]: e.target.value }));
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-    if (typeof onClose === "function") onClose();
-  };
+  }, [onClose]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!formData.name || !formData.number || !formData.email) {
-      setStatus("error");
-      return;
-    }
-
-    setLoading(true);
-    setStatus(null);
-
+    setStatus("sending");
     try {
-      const payload = new FormData();
-      Object.keys(formData).forEach((key) => {
-        payload.append(key, formData[key]);
-      });
-
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        body: payload,
-        headers: { Accept: "application/json" },
-      });
-
-      const json = await res.json();
-
-      if (res.ok) {
-        setStatus("success");
-        try {
-          localStorage.setItem("formFilled", "1");
-        } catch (err) {}
-
-        setTimeout(() => {
-          setLoading(false);
-          closeModal();
-        }, 3000); // Increased timeout to let the user read the success message
-      } else {
-        setStatus("error");
-        setLoading(false);
-        console.error("Formspree error:", json);
-      }
-    } catch (err) {
+      const res = await fetch(FORMSPREE_ENDPOINT, { method: "POST", body: new FormData(e.target), headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error(`Formspree ${res.status}`);
+      setStatus("success");
+      try { localStorage.setItem("formFilled", "1"); } catch { /* storage blocked: popup is session-limited anyway */ }
+      setTimeout(onClose, 2500);
+    } catch {
       setStatus("error");
-      setLoading(false);
-      console.error("Submit error:", err);
     }
   };
-
-  if (!showModal) return null;
-
-  // --- New Status Display Component Logic ---
-  const StatusOverlay = ({ status }) => {
-    const isSuccess = status === "success";
-    const color = isSuccess ? "bg-green-100 border-green-400 text-green-700" : "bg-red-100 border-red-400 text-red-700";
-    const icon = isSuccess ? "✓" : "!";
-    const title = isSuccess ? "Submission Successful!" : "Submission Failed";
-    const message = isSuccess
-      ? "Thank you! Your details have been successfully submitted. We'll be in touch shortly."
-      : "Oops! Something went wrong. Please ensure all required fields are filled correctly and try again.";
-
-    return (
-      <div className="absolute inset-0 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-2xl z-10 transition-opacity duration-300">
-        <div className={`text-center p-8 m-4 rounded-xl border-2 ${color} max-w-sm w-full shadow-lg`}>
-          <div className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center text-4xl mb-4 ${isSuccess ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`}>
-            {icon}
-          </div>
-          <h3 className="text-2xl font-[PoppinsSbold] mb-2">{title}</h3>
-          <p className="font-[PoppinsRegular] text-base">{message}</p>
-          {!isSuccess && (
-            <button
-              onClick={() => setStatus(null)} // Allows user to close the overlay and try again
-              className="mt-4 px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg font-[PoppinsRegular] transition"
-            >
-              Close and Try Again
-            </button>
-          )}
-        </div>
-      </div>
-    );
-  };
-
-  // ------------------------------------------
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-50 p-4 sm:p-6">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md sm:max-w-lg p-6 sm:p-8 relative animate-fadeIn font-[Poppins] max-h-[85vh] overflow-y-auto">
-        
-        {/* The new visually appealing status overlay */}
-        {(status === "success" || status === "error") && <StatusOverlay status={status} />}
-
-        <button
-          onClick={closeModal}
-          aria-label="Close"
-          className="absolute top-2 right-4 text-gray-500 hover:text-gray-700 text-xl z-20" // Increased z-index for close button
-        >
-          ✕
+    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 p-4" onClick={onClose}>
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="popup-title"
+        className="relative bg-white rounded-2xl shadow-xl w-full max-w-md p-6 sm:p-8 text-[#253672]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button onClick={onClose} aria-label={t("close")} className="absolute top-3 right-3 w-11 h-11 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100">
+          <svg aria-hidden="true" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
         </button>
 
-        <h2
-          className="text-xl sm:text-3xl text-center my-4 font-[PoppinsSbold] leading-snug"
-          style={{ color: "#253672" }}
-        >
-          Welcome! <br className="hidden sm:block" /> Please verify your details
-        </h2>
-
-        {/* Removed the old status divs */}
-        
-        <form autoComplete="on" className="space-y-4" onSubmit={handleSubmit} noValidate>
-          <div>
-            <label className="text-gray-700 font-[PoppinsRegular] text-sm block mb-1">Full Name *</label>
-            <input
-              required
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Enter your full name"
-              className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none text-sm sm:text-base"
-            />
+        {status === "success" ? (
+          <div role="status" className="py-6 text-center">
+            <h2 className="text-2xl font-[PoppinsSbold]">{t("successTitle")}</h2>
+            <p className="mt-2 text-lg">{t("successMessage")}</p>
           </div>
+        ) : (
+          <>
+            <h2 id="popup-title" className="text-2xl font-[PoppinsSbold] pr-10">{t("title")}</h2>
+            <p className="mt-2 text-base text-gray-700">{t("subtitle")}</p>
 
-          <div>
-            <label className="text-gray-700 font-[PoppinsRegular] text-sm block mb-1">Mobile Number *</label>
-            <input
-              required
-              name="number"
-              value={formData.number}
-              onChange={handleChange}
-              placeholder="Enter your phone number"
-              inputMode="tel"
-              className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none text-sm sm:text-base"
-            />
-          </div>
+            {status === "error" && (
+              <p role="alert" className="mt-4 p-3 rounded-xl bg-red-50 text-red-800">
+                {t("errorMessage")} <a href={TEL} className="underline font-[PoppinsSbold]">+91 97370 73390</a>
+              </p>
+            )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className="text-gray-700 font-[PoppinsRegular] text-sm block mb-1">Location</label>
-              <input
-                name="location"
-                value={formData.location}
-                onChange={handleChange}
-                placeholder="City / Area"
-                className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none text-sm sm:text-base"
-              />
-            </div>
-
-            <div>
-              <label className="text-gray-700 font-[PoppinsRegular] text-sm block mb-1">Pin Code</label>
-              <input
-                name="pincode"
-                value={formData.pincode}
-                onChange={handleChange}
-                placeholder="Pin code"
-                inputMode="numeric"
-                className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none text-sm sm:text-base"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label className="text-gray-700 font-[PoppinsRegular] text-sm block mb-1">Email *</label>
-            <input
-              required
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="you@domain.com"
-              className="w-full font-[PoppinsElight] mt-1 p-3 border rounded-xl focus:ring-2 focus:ring-[#253672] outline-none text-sm sm:text-base"
-            />
-          </div>
-
-          <button
-            type="submit"
-            disabled={loading || status === 'success'} // Disable submit if loading or already succeeded
-            className={`w-full mt-1 p-3 rounded-xl text-white font-[PoppinsRegular] text-sm sm:text-base transition ${
-              loading || status === 'success'
-                ? "bg-[#253672]/80 cursor-not-allowed"
-                : "bg-[#253672] hover:bg-[#1f2f5a]"
-            }`}
-          >
-            {loading ? "Submitting..." : "Submit"}
-          </button>
-        </form>
-
-        <p className="text-xs text-gray-400 text-center font-[PoppinsRegular] mt-3">
-          We respect your privacy — your data will not be shared.
-        </p>
+            <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
+              <label className="block text-base font-[PoppinsMedium]">
+                {t("name")}
+                <input ref={firstField} required name="name" autoComplete="name" className={field} />
+              </label>
+              <label className="block text-base font-[PoppinsMedium]">
+                {t("phone")}
+                <input required name="number" type="tel" inputMode="tel" autoComplete="tel" pattern="[0-9+\s\-]{10,15}" className={field} />
+              </label>
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="w-full p-3.5 rounded-xl bg-[#253672] hover:bg-[#1a2555] text-white text-lg font-[PoppinsSbold] transition disabled:opacity-70 disabled:cursor-wait"
+              >
+                {status === "sending" ? t("submitting") : t("submit")}
+              </button>
+            </form>
+            <p className="mt-3 text-sm text-gray-600 text-center">{t("privacy")}</p>
+          </>
+        )}
       </div>
     </div>
   );

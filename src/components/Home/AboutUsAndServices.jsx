@@ -1,32 +1,20 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import backgroundImage from "../../assets/Home/About/About_bg.jpg";
-import realEstateImage from "../../assets/Home/About/real_estate.jpg";
-import litigationImage from "../../assets/Home/About/litigation.jpg";
-import constructionImage from "../../assets/Home/About/construction.jpg";
-import financialImage from "../../assets/Home/About/financial.jpg";
+import backgroundImage from "../../assets/Home/About/About_bg.webp";
 
 import { Link } from "react-router";
 import ServicesSection from "./ServicesSection";
+import { useLocalePath } from "../../lang";
 
 const AboutUsAndServices = () => {
   const { t } = useTranslation('about');
 
-  // Retrieve translated services array
-  const translatedServices = t('servicesSection.cards', { returnObjects: true });
-
-  const staticImages = [financialImage, realEstateImage, constructionImage, litigationImage];
-
-  // Combine translated text with static image paths
-  const services = translatedServices.map((service, index) => ({
-    ...service,
-    image: staticImages[index],
-  }));
+  const lp = useLocalePath();
 
   const linkItems = t('aboutSection.listItems', { returnObjects: true });
 
   return (
-    <section id='about' className="relative min-h-screen bg-[#f0f2f5] text-gray-800 overflow-hidden pb-20">
+    <section id="about" className="scroll-mt-28 relative min-h-screen bg-[#f0f2f5] text-gray-800 overflow-hidden pb-20">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-10 z-0"
         style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -37,15 +25,12 @@ const AboutUsAndServices = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 ">
 
           <div className="lg:w-3/5">
-            <button className="px-6 py-2 text-md font-[PoppinsRegular] border border-[#253672] text-[#253672] rounded-full hover:bg-gray-200 transition">
-              {t('aboutSection.aboutUsButton')}
-            </button>
 
-            <h1 className="mt-6 text-3xl sm:text-5xl lg:text-6xl leading-tight font-[PoppinsRegular] text-[#253672]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-[PoppinsSbold] text-[#253672]">
               {t('aboutSection.heading1_beforeBold')} <strong>{t('aboutSection.heading1_bold')}</strong>,
               <br />
               {t('aboutSection.heading2_beforeBold')} <strong>{t('aboutSection.heading2_bold')}</strong>.
-            </h1>
+            </h2>
 
             <p className="mt-6 text-base sm:text-lg max-w-3xl font-[PoppinsRegular] text-[#253672]">
               {t('aboutSection.paragraph1')}
@@ -67,7 +52,7 @@ const AboutUsAndServices = () => {
 
         <div className="flex justify-end ">
           <div className="flex ">
-            <Link to="/about"
+            <Link to={lp("/about")}
               className="
               group
               px-8 py-2 mt-6 lg:mt-0
@@ -112,24 +97,8 @@ const AboutUsAndServices = () => {
 
         </div>
 
-        <ServicesSection services={services} t={t} />
+        <ServicesSection />
 
-      </div>
-
-      <div className="absolute bottom-8 right-8 p-3 bg-[#253672] rounded-full cursor-pointer hover:bg-white transition group">
-        <svg
-          className="w-6 h-6 text-white group-hover:text-[#253672]"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          />
-        </svg>
       </div>
     </section>
   );

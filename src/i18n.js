@@ -1,27 +1,22 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import Backend from 'i18next-http-backend';
+import { splitLang } from './lang';
 
-i18n
-  .use(Backend)
-  .use(initReactI18next)
-  .init({
-    lng: 'en',
-    fallbackLng: 'en',
+// Bundled (not fetched) so pages can be prerendered with real text for crawlers.
+const files = import.meta.glob('./locales/*/*.json', { eager: true, import: 'default' });
+const resources = {};
+for (const [path, data] of Object.entries(files)) {
+  const [, lng, ns] = path.match(/locales\/(\w+)\/(.+)\.json$/);
+  (resources[lng] ??= {})[ns] = data;
+}
 
-    ns: ['common', 'home-hero', 'about', 'projects', 'feedback', 'contact', 'about_page', "ourcompany_page", "financial_plan", "social"],
-    defaultNS: 'common',
-
-    // Preload the most critical namespaces to avoid initial loading flicker
-    preload: ['common', 'hero'],
-
-    interpolation: {
-      escapeValue: false,
-    },
-
-    backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
-    }
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: typeof window === 'undefined' ? 'en' : splitLang(window.location.pathname)[0],
+  fallbackLng: 'en',
+  defaultNS: 'common',
+  initAsync: false,
+  interpolation: { escapeValue: false },
+});
 
 export default i18n;

@@ -1,89 +1,50 @@
-import { useEffect } from "react";
-import whatsappIcon from "../../assets/Common/whatsapp.png";
-import gmailIcon from "../../assets/Common/gmail.png";
+import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
+import titleImage from "../../assets/Home/About/About_bg.webp";
+import mahareraImage from "../../assets/financial/strategy.webp";
+import litigationImage from "../../assets/Home/About/litigation.webp";
+import constructionImage from "../../assets/Home/About/construction.webp";
+import financialImage from "../../assets/Home/About/financial.webp";
 
-// Removed Swiper imports and styles
+const IMAGES = [constructionImage, titleImage, mahareraImage, litigationImage, financialImage];
+const SLUGS = ["redevelopment-nashik", "property-title-verification", "maharera-registration", "property-litigation-consultancy", "financial-consultancy"];
 
-export default function ServicesSection({ services, t }) {
-  // Optional: A small effect to ensure the section is present if needed for routing
-  useEffect(() => {
-    // You might want to add any grid-specific initialization here if necessary,
-    // but for Tailwind CSS grid, it's mostly in the JSX.
-  }, []);
+// Redevelopment (the primary job) leads as a wide card; the other four sit in a 2x2 grid.
+export default function ServicesSection({ showHeading = true }) {
+  const { t } = useTranslation("about");
+  const services = t("servicesSection.cards", { returnObjects: true }).map((s, i) => ({ ...s, image: IMAGES[i], slug: SLUGS[i] }));
 
   return (
-    <div id="services" className="mt-20">
-      {/* Header and Button Section */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
-        <h2 className="text-3xl sm:text-5xl font-[PoppinsRegular] text-[#253672]">
-          {t("servicesSection.heading")}
-        </h2>
+    <div id="services" className={showHeading ? "mt-20 scroll-mt-28" : ""}>
+      {showHeading && <h2 className="text-3xl sm:text-4xl font-[PoppinsSbold] text-[#253672] mb-10">
+        {t("servicesSection.heading")}
+      </h2>}
 
-        <button className="px-6 py-2 text-sm border border-[#253672] rounded-full text-[#253672] font-[PoppinsRegular] hover:bg-gray-200 transition">
-          {t("servicesSection.offerButton")}
-        </button>
-      </div>
-
-      {/* Services Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service, index) => (
-          <div
-            key={index}
-            className="bg-[#253672] rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02]"
+          <article
+            key={service.slug}
+            className={`bg-[#253672] rounded-xl shadow-lg overflow-hidden flex flex-col ${index === 0 ? "md:col-span-2 md:flex-row" : ""}`}
           >
-            {/* Service Image */}
-            <div className="h-auto overflow-hidden p-4">
+            <div className={`p-4 ${index === 0 ? "md:w-1/2" : ""}`}>
               <img
                 src={service.image}
-                alt={service.title}
-                className="w-full object-cover rounded-xl aspect-[5/2]" // Added aspect ratio for consistent height 4/3
+                alt=""
+                loading="lazy"
+                className={`w-full object-cover rounded-xl ${index === 0 ? "aspect-[5/2] md:aspect-auto md:h-full" : "aspect-[5/2]"}`}
               />
             </div>
-
-            {/* Service Content */}
-            <div className="p-6 text-white">
-              <h3 className="text-2xl font-[PoppinsSbold]">{service.title}</h3>
-              <hr className="my-4 border-white/40" />
-
-              <p className="text-gray-300">{service.description}</p>
-
-              {/* Phone/WhatsApp Link */}
-              <a
-                href={`tel:${service.number}`}
-                className="flex items-center gap-2 text-gray-300 mt-5 transition hover:text-white"
-              >
-                <div className="w-8 h-8 bg-white flex justify-center items-center rounded-full flex-shrink-0">
-                  <img
-                    src={whatsappIcon}
-                    alt="phone"
-                    className="w-5 h-5 object-contain"
-                  />
-                </div>
-                {service.number}
-              </a>
-
-              {/* Email with Gmail Icon */}
-              <a
-                href={`mailto:${service.email}`}
-                className="flex items-center gap-2 text-gray-300 mt-3 hover:text-white transition w-full"
-              >
-                {/* 👇 Added 'shrink-0' here. This stops the circle from becoming an oval. */}
-                <div className="w-8 h-8 bg-white flex justify-center items-center rounded-full shrink-0">
-                  <img
-                    src={gmailIcon}
-                    alt="email"
-                    /* object-contain ensures the image inside doesn't stretch */
-                    className="w-5 h-5 object-contain"
-                  />
-                </div>
-
-                {/* break-all forces the text to wrap if it hits the container edge */}
-                <span className="break-all text-sm sm:text-base">
-                  {service.email}
-                </span>
-              </a>
+            <div className={`p-6 text-white flex flex-col ${index === 0 ? "md:w-1/2 md:justify-center" : ""}`}>
+              <h3 className="text-2xl font-[PoppinsSbold]">
+                <Link to={`/services/${service.slug}`} className="hover:underline underline-offset-4">{service.title}</Link>
+              </h3>
+              <p className="mt-4 text-white/85 text-base sm:text-lg leading-relaxed">{service.description}</p>
+              <Link to={`/services/${service.slug}`} className="mt-5 self-start text-white font-[PoppinsMedium] underline underline-offset-4">
+                {t("aboutSection.learnMoreButton")}
+                <span className="sr-only">: {service.title}</span>
+              </Link>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>

@@ -1,0 +1,138 @@
+{
+  "about_page": {
+    "indicator": "About Us",
+    "tagline": "Building Dreams. Developing Lands. Redefining Spaces.",
+    "mainTitle": "About Yajurved Construction",
+    "introParagraph": "Yajurved Construction is built on the philosophy of harmonizing ancient wisdom with modern engineering. We deliver durable and thoughtfully designed spaces rooted in trust, precision, and innovation.",
+    "midTitle": "How We Work",
+    "careerTitle": "Career / Work Opportunities in the Redevelopment Sector",
+    "labels": {
+      "role": "Role:",
+      "workAreas": "Key Work Areas:",
+      "qualification": "Required Qualification:"
+    }
+  },
+  "howToWork": [
+    {
+      "title": "One Accountable Team",
+      "description": "Construction, property documentation, legal coordination and financial consultancy sit under one roof. A housing society or landowner deals with one accountable team instead of five separate vendors."
+    },
+    {
+      "title": "Paperwork Before Concrete",
+      "description": "Every engagement starts with a title check and a written approvals plan: building permission from the Nashik Municipal Corporation under UDCPR, and MahaRERA registration where the project requires it. Nothing is built on an unclear title."
+    },
+    {
+      "title": "Transparent Communication",
+      "description": "Members and clients receive written timelines, minutes of every decision and regular site updates. If something changes, you hear it from us first, with the reason and the impact on cost and schedule."
+    },
+    {
+      "title": "New, and Honest About It",
+      "description": "Yajurved was founded in 2025 in Nashik. We are a young company, so on each project we work with experienced engineers, architects, advocates and chartered accountants, and we are happy to introduce them before you sign."
+    }
+  ],
+  "companySection": {
+    "title": "Our companies",
+    "names": [
+      "Sona Developers and Constructions",
+      "Sonali Creation's",
+      "Samana Way Reality"
+    ],
+    "description": "Associated companies of the Yajurved group. Ask us for details of any of them."
+  },
+  "expertise": [
+    {
+      "category": "Expert Consultancy and Services",
+      "roles": [
+        {
+          "title": "Project Management Consultant (PMC)",
+          "role": "Act as the technical manager for the redevelopment project for the housing society.",
+          "work": [
+            "Prepare the Feasibility Report.",
+            "Handle the process of selecting developers/contractors (Tendering).",
+            "Monitor the construction quality and project timeline."
+          ],
+          "qualification": "Background in Engineering or Architecture."
+        },
+        {
+          "title": "Legal Consultant / Advocate",
+          "role": "Draft legal documents (especially the Development Agreement) between the society and the developer and resolve disputes.",
+          "work": [
+            "Provide legal advice to the society.",
+            "Verify land title documents.",
+            "Assist with MahaRERA and other government approvals."
+          ],
+          "qualification": "Expertise in Real Estate & RERA Law."
+        },
+        {
+          "title": "Architect and Town Planner",
+          "role": "Design the new building layout and plan according to government norms (such as FSI, margins, and height regulations).",
+          "work": [
+            "Create designs and layouts for the new flats.",
+            "Submit plans to the local municipal corporation (e.g., NMC).",
+            "Prepare master planning for cluster redevelopment."
+          ],
+          "qualification": "N/A"
+        },
+        {
+          "title": "Chartered Accountant (CA) / Finance Expert",
+          "role": "Manage finance and tax planning in Self-Redevelopment or Joint-Venture models.",
+          "work": [
+            "Manage accounts of corpus fund and profit from saleable flats.",
+            "Handle planning for GST and Income Tax.",
+            "Assist in obtaining loans from banks (Self-Redevelopment Loan)."
+          ],
+          "qualification": "N/A"
+        }
+      ]
+    },
+    {
+      "category": "Construction and Supply",
+      "roles": [
+        {
+          "title": "Contractor / Builder",
+          "role": "Manage construction work including everything from site preparation to finishing.",
+          "work": [
+            "Demolition of existing structure.",
+            "Structural construction and finishing work.",
+            "Manage workers and site operations."
+          ],
+          "qualification": "N/A"
+        },
+        {
+          "title": "Material Supplier",
+          "role": "Supply necessary construction materials (cement, steel, bricks, tiles, plumbing fixtures, etc.).",
+          "work": [
+            "Contract bulk supply with large construction companies.",
+            "Deliver high-quality materials to the site on time."
+          ],
+          "qualification": "N/A"
+        }
+      ]
+    },
+    {
+      "category": "Real Estate and Marketing",
+      "roles": [
+        {
+          "title": "Sales and Brokerage",
+          "role": "Sell the developer’s saleable units in the market.",
+          "work": [
+            "Manage project marketing and advertising.",
+            "Show flats to potential buyers and close sales.",
+            "Identify land and societies for upcoming redevelopment projects."
+          ],
+          "qualification": "N/A"
+        },
+        {
+          "title": "Developer",
+          "role": "Take financial risk, invest in the project, and earn profit.",
+          "work": [
+            "Sign agreements with the society.",
+            "Obtain government permissions and arrange finance.",
+            "Complete the project on time and sell."
+          ],
+          "qualification": "N/A"
+        }
+      ]
+    }
+  ]
+}

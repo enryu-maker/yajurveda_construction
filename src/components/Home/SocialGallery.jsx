@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { useLocalePath } from "../../lang";
 
 const SocialGallery = () => {
   const navigate = useNavigate();
+  const lp = useLocalePath();
   const { t } = useTranslation('social');
 
   // Helper to ensure we use the correct embed URL format for iframes
@@ -63,7 +65,7 @@ const SocialGallery = () => {
               <iframe
                 src={getEmbedUrl(reel.url)}
                 className="w-full h-full border-none overflow-hidden"
-                allowTransparency="true"
+
                 allow="encrypted-media"
                 title={`Instagram Reel ${reel.id}`}
               ></iframe>
@@ -74,7 +76,7 @@ const SocialGallery = () => {
         {/* See More Button */}
         <div className="mt-12 text-center">
           <button
-            onClick={() => navigate('/instagram-feed')}
+            onClick={() => navigate(lp('/instagram-feed'))}
             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-[PoppinsMedium] rounded-md text-white bg-brand-blue hover:bg-opacity-90 md:py-4 md:text-lg md:px-10 transition-all duration-300 shadow-md hover:shadow-lg"
             style={{ backgroundColor: '#4666D8' }}
           >

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-import { Helmet } from 'react-helmet';
+import PageHero from "../components/PageHero";
 import { useTranslation } from 'react-i18next';
 
 const InstagramFeedPage = () => {
@@ -51,31 +51,13 @@ const InstagramFeedPage = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Instagram Gallery | Yajurveda Construction</title>
-                <meta name="description" content="Explore our latest Instagram Reels showcasing our projects, construction updates, and happy clients." />
-            </Helmet>
-
             <Header />
+            <PageHero title={t("feed_title")} intro={t("feed_subtitle")}>
+                <a href="https://www.instagram.com/yajurvedgroup/" target="_blank" rel="noreferrer" className="inline-block mt-6 text-lg font-[PoppinsMedium] underline underline-offset-4">@yajurvedgroup</a>
+            </PageHero>
 
-            <main className="min-h-screen bg-gray-50 pt-32 pb-16">
+            <div className="bg-[#f0f2f5] py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h1 className="text-4xl text-[#253672] font-[PoppinsBold] sm:text-5xl ">
-                            {t('feed_title')}
-                        </h1>
-                        <p className="mt-4 text-xl text-[#253672] max-w-3xl mx-auto font-[PoppinsRegular]">
-                            {t('feed_subtitle')}
-                        </p>
-                        <a
-                            href="https://www.instagram.com/yajurvedgroup/"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-block mt-6 text-[#253672] font-[PoppinsMedium] hover:underline"
-                        >
-                            @yajurvedgroup
-                        </a>
-                    </div>
 
                     {/* Grid of All Reels */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -87,7 +69,7 @@ const InstagramFeedPage = () => {
                                 <iframe
                                     src={getEmbedUrl(reel.url)}
                                     className="w-full h-full border-none overflow-hidden"
-                                    allowTransparency="true"
+
                                     allow="encrypted-media"
                                     title={`Instagram Reel ${reel.id}`}
                                 ></iframe>
@@ -96,7 +78,7 @@ const InstagramFeedPage = () => {
                     </div>
 
                 </div>
-            </main>
+            </div>
 
             <Footer />
         </>

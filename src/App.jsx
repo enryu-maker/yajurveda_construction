@@ -1,77 +1,75 @@
 import React, { useEffect, useState } from 'react'
+import { Route, Routes, useLocation } from 'react-router';
+import i18n from './i18n';
+import { LANGS, PAGE_PATHS, splitLang, withLang } from './lang';
+import { getSeo } from './seo';
 import HomePage from './pages/HomePage'
 import PopupForm from "./components/Form/PopupForm";
 import AboutPage from './pages/AboutPage'
 import OurCompanyPage from './pages/OurCompanyPage';
-import { BrowserRouter, Route, Routes } from 'react-router';
 import ScrollToTop from './ScrollToTop';
 import FinancialPlanPage from './pages/FinancialPlanPage';
 import InstagramFeedPage from './pages/InstagramFeedPage';
+import ServicePage from './pages/ServicePage';
+import NotFoundPage from './pages/NotFoundPage';
+import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
+import MobileContactBar from "./components/MobileContactBar";
+
+const PAGES = {
+  '/': HomePage,
+  '/about': AboutPage,
+  '/our-company': OurCompanyPage,
+  '/financial-plan': FinancialPlanPage,
+  '/instagram-feed': InstagramFeedPage,
+  '/services': ServicesPage,
+  '/contact': ContactPage,
+};
+
+const POPUP_DELAY_MS = 20000; // don't block first view (Google penalises intrusive interstitials)
 
 const App = () => {
-
-  const [showModal, setShowModal] = useState(true);
+  const { pathname } = useLocation();
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    // 1. ENVIRONMENT CHECK: Ensure code runs only on the client (browser)
-    // This is crucial for Server-Side Rendering (SSR) environments like Next.js or Gatsby
-    if (typeof window === 'undefined') {
-      return;
-    }
-
+    // At most once per session, never after the visitor has already sent their details.
     try {
-      // 2. ERROR HANDLING: Check for localStorage accessibility
-      // Some browsers (e.g., Safari in private mode) or security policies 
-      // block localStorage access, throwing a SecurityError.
-      const storage = window.localStorage;
+      if (localStorage.getItem("formFilled") === "1" || sessionStorage.getItem("popupShown")) return;
+    } catch { return; /* storage blocked: skip rather than nag on every visit */ }
+    const id = setTimeout(() => {
+      setShowModal(true);
+      try { sessionStorage.setItem("popupShown", "1"); } catch { /* ignore */ }
+    }, POPUP_DELAY_MS);
+    return () => clearTimeout(id);
+  }, []);
 
-      const filled = storage.getItem("formFilled");
-
-      // 3. STRICT CHECK: Compare against the exact string value
-      if (filled === "1") {
-        setShowModal(false);
-      }
-    } catch (err) {
-      // 4. ROBUST ERROR HANDLING: Log the error and fail gracefully
-      // Instead of just ignoring it, log it to your monitoring system (Sentry, console) 
-      // while still preventing the app from crashing.
-      console.error("Error accessing localStorage:", err);
-      // In a production app, you might want a specific action here, 
-      // but usually, falling back to the default state (showing the modal) is safest.
-    }
-  }, [setShowModal]); // 5. Dependency Array: Include external dependencies
-
-  const handleClose = () => {
-    setShowModal(false);
-  };
+  // Language follows the URL; head tags were prerendered, this keeps them right after client navigation.
+  useEffect(() => {
+    const [lng] = splitLang(pathname);
+    if (i18n.language !== lng) i18n.changeLanguage(lng);
+    const seo = getSeo(pathname);
+    document.documentElement.lang = lng;
+    document.title = seo.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', seo.description);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', seo.url);
+  }, [pathname]);
 
   return (
     <>
       <ScrollToTop />
-      <div className='overflow-x-hidden'>
-
-        {/* 2. Define the Routes container */}
+      <div className="overflow-x-hidden pb-16 md:pb-0">
         <Routes>
-          {/* Route for the Home Page (Path: /) */}
-          <Route path="/" element={<HomePage />} />
-
-          {/* Route for the About Page (Path: /about) */}
-          <Route path="/about" element={<AboutPage />} />
-
-          {/* Route for the Our Company Page (Path: /ourCompany) */}
-          <Route path="/ourcompany" element={<OurCompanyPage />} />
-
-          <Route path="/financialplan" element={<FinancialPlanPage />} />
-
-          {/* Route for Instagram Feed Page */}
-          <Route path="/instagram-feed" element={<InstagramFeedPage />} />
-
-
+          {LANGS.flatMap((l) => PAGE_PATHS.map((p) => {
+            const Page = PAGES[p];
+            return <Route key={l + p} path={withLang(l, p)} element={<Page />} />;
+          }))}
+          <Route path="/services/:slug" element={<ServicePage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
-        {/* 3. Modal Renders (Outside the Routes, so it persists across pages) */}
-        {showModal && <PopupForm onClose={handleClose} />}
-
+        {showModal && <PopupForm onClose={() => setShowModal(false)} />}
+        <MobileContactBar />
       </div>
     </>
   )

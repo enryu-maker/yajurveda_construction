@@ -1,0 +1,35 @@
+{
+  "header": {
+    "titleLine1": "Start The",
+    "titleLine2": "Conversation!",
+    "button": "Contact Us"
+  },
+  "form": {
+    "placeholderName": "Your Name",
+    "placeholderPhone": "Phone Number",
+    "placeholderEmail": "Email Address",
+    "dropdownEnquiries": "Enquiries",
+    "optionSales": "Real Estate Development",
+    "optionSupport": "Litigation Property",
+    "optionOther": "Construction Management",
+    "tagline": "Let's turn plans into possibilities",
+    "submitButton": "Submit",
+    "successTitle": "Message Sent Successfully!",
+    "successMessage": "Thank you for reaching out. We’ll get back to you shortly.",
+    "errorTitle": "Something Went Wrong!",
+    "errorMessage": "Please try again, or call or WhatsApp us on +91 97370 73390.",
+    "labelName": "Your name",
+    "labelPhone": "Phone number",
+    "labelEmail": "Email (optional)",
+    "labelEnquiry": "What do you need help with?",
+    "options": [
+      "Society redevelopment",
+      "Title verification",
+      "MahaRERA registration",
+      "Property dispute",
+      "Financial consultancy",
+      "Something else"
+    ],
+    "callback": "We will call you back within 1 working day."
+  }
+}

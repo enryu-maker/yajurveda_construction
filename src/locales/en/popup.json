@@ -1,0 +1,15 @@
+{
+  "title": "Want us to call you?",
+  "subtitle": "Leave your name and number and we will call you back within 1 working day.",
+  "name": "Your name",
+  "phone": "Phone number",
+  "submit": "Request a call",
+  "submitting": "Sending…",
+  "close": "Close",
+  "successTitle": "Thank you",
+  "successMessage": "We will call you back within 1 working day.",
+  "errorTitle": "That did not go through",
+  "errorMessage": "Please try again, or call +91 97370 73390.",
+  "retry": "Try again",
+  "privacy": "We only use your number to call you back."
+}

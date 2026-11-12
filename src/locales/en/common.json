@@ -1,0 +1,154 @@
+{
+  "footer": {
+    "companyName": "YAJURVED CONSTRUCTION PVT. LTD.",
+    "socialsHeading": "Our Socials",
+    "linksHeading": "Quick Links",
+    "links": [
+      {
+        "label": "Home",
+        "path": "/"
+      },
+      {
+        "label": "About",
+        "path": "/about"
+      },
+      {
+        "label": "Services",
+        "path": "/services"
+      },
+      {
+        "label": "Our Company",
+        "path": "/our-company"
+      },
+      {
+        "label": "Financial Plan",
+        "path": "/financial-plan"
+      },
+      {
+        "label": "Contact ",
+        "path": "/contact"
+      }
+    ],
+    "servicesHeading": "Services",
+    "services": [
+      {
+        "label": "Construction & Redevelopment",
+        "path": "/services/redevelopment-nashik"
+      },
+      {
+        "label": "Title Verification",
+        "path": "/services/property-title-verification"
+      },
+      {
+        "label": "MahaRERA Registration",
+        "path": "/services/maharera-registration"
+      },
+      {
+        "label": "Property Litigation",
+        "path": "/services/property-litigation-consultancy"
+      },
+      {
+        "label": "Financial Consultancy",
+        "path": "/services/financial-consultancy"
+      }
+    ],
+    "contactHeading": "Contact Details",
+    "callUsLabel": "Call Us",
+    "phoneNumber": "+91 9737073390",
+    "emailUsLabel": "Email Us",
+    "emailAddress": "help.yajurved@gmail.com",
+    "addressLabel": "Address",
+    "addressLine1": "B NO-3, P NO-4, SHALIGRAM APARTMENT, D’SOUZA COLONY, NASHIK - 422002",
+    "hoursLabel": "Active Hours",
+    "hoursDays": "Mon–Fri",
+    "hoursTime": "11:00 AM to 05:00 PM",
+    "copyright": "© {{year}} YAJURVED CONSTRUCTION PVT. LTD.",
+    "allRights": "All Rights Reserved.",
+    "madeWith": "Made with ❤️ by"
+  },
+  "header": {
+    "links": [
+      {
+        "label": "Home",
+        "path": "/"
+      },
+      {
+        "label": "About",
+        "path": "/about"
+      },
+      {
+        "label": "Services",
+        "path": "/services"
+      },
+      {
+        "label": "Our Company",
+        "path": "/our-company"
+      },
+      {
+        "label": "Financial Plan",
+        "path": "/financial-plan"
+      }
+    ],
+    "button": {
+      "label": "Get In Touch",
+      "path": "/contact"
+    }
+  },
+  "seo": {
+    "home": {
+      "name": "Home",
+      "title": "Construction & Redevelopment Company in Nashik | Yajurved",
+      "description": "Construction, society redevelopment, MahaRERA & title documentation, property litigation and financial consultancy in Nashik. Call +91 97370 73390."
+    },
+    "about": {
+      "name": "About",
+      "title": "About Yajurved Construction Pvt. Ltd. | Nashik",
+      "description": "Yajurved Construction Pvt. Ltd. was founded in 2025 in Nashik, Maharashtra. See how we handle construction, redevelopment, approvals and property consultancy."
+    },
+    "our-company": {
+      "name": "Our Company",
+      "title": "Our Company: Mission & Vision | Yajurved Construction",
+      "description": "Mission, vision and what makes Yajurved Construction different: a Nashik real estate development and redevelopment company founded in 2025."
+    },
+    "financial-plan": {
+      "name": "Financial Plan",
+      "title": "Real Estate Investment Plan | Yajurved Construction",
+      "description": "Overview of Yajurved's real estate investment plan: structure, 24-month lock-in, indicative yields and key risks. Returns are not guaranteed."
+    },
+    "instagram-feed": {
+      "name": "Instagram Gallery",
+      "title": "Project Photos & Reels | Yajurved Construction Nashik",
+      "description": "Site updates, project walkthroughs and reels from Yajurved Construction in Nashik, on Instagram @yajurvedgroup."
+    },
+    "notFound": {
+      "title": "Page not found | Yajurved Construction"
+    },
+    "services": {
+      "name": "Services",
+      "title": "Construction & Property Services in Nashik | Yajurved",
+      "description": "Society redevelopment, construction, title verification, MahaRERA registration, property litigation and financial consultancy in Nashik, under one roof."
+    },
+    "contact": {
+      "name": "Contact",
+      "title": "Contact Yajurved Construction, Nashik | Call or WhatsApp",
+      "description": "Call or WhatsApp +91 97370 73390, email help.yajurved@gmail.com, or visit our office in D'Souza Colony, Nashik. Mon–Fri, 11 AM–5 PM."
+    }
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "home": "Yajurved Construction home",
+    "call": "Call",
+    "whatsapp": "WhatsApp"
+  },
+  "pages": {
+    "services": {
+      "h1": "Our Services in Nashik",
+      "intro": "Construction, redevelopment, paperwork, legal and finance, handled by one accountable team. Choose a service to see how it works."
+    },
+    "contact": {
+      "h1": "Contact Yajurved Construction",
+      "intro": "Call or WhatsApp +91 97370 73390, or send your details and we will call you back. Office: B No-3, P No-4, Shaligram Apartment, D'Souza Colony, Nashik 422002. Mon–Fri, 11 AM–5 PM."
+    }
+  }
+}

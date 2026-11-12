@@ -2,19 +2,21 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { HashLink } from "react-router-hash-link";
-import logo from "../../assets/Common/Logo_icon.png";
-import wordmark from "../../assets/Common/word_mark.png";
+import logo from "../../assets/Common/Logo_icon.webp";
+import wordmark from "../../assets/Common/word_mark.webp";
 import instagramIcon from "../../assets/Common/instagram.png";
 import facebookIcon from "../../assets/Common/facebook.png";
 import whatsappIcon from "../../assets/Common/whatsapp.png";
 import gmailIcon from "../../assets/Common/gmail.png";
 import { useLocation } from "react-router";
+import { splitLang, useLocalePath } from "../../lang";
 
 const Footer = () => {
 
     const location = useLocation();
 
-    const currentPathRaw = location.pathname || '/';
+    const currentPathRaw = splitLang(location.pathname)[1];
+    const lp = useLocalePath();
     // normalize path: lowercase and remove trailing slash
     const currentPath = currentPathRaw.toLowerCase().replace(/\/+$/, '') || '/';
 
@@ -24,8 +26,8 @@ const Footer = () => {
         // Home page background color (Example: Dark Blue from Hero)
         '/': 'white',
         '/about': '#f0f2f5',
-        '/ourcompany': '#f0f2f5',
-        '/financialplan': '#f0f2f5',
+        '/our-company': '#f0f2f5',
+        '/financial-plan': '#f0f2f5',
     };
 
     // 3. Determine the final background color
@@ -44,7 +46,7 @@ const Footer = () => {
                 <li key={item.label}>
                     <HashLink
                         smooth
-                        to={item.path}
+                        to={lp(item.path)}
                         className="text-lg font-[PoppinsRegular] hover:text-[#1e2c8b] transition"
                     >
                         {item.label}
@@ -66,12 +68,12 @@ const Footer = () => {
                         <div className="flex items-center space-x-4 flex-wrap">
                             <img
                                 src={logo}
-                                alt="Yajurveda Logo"
+                                alt="Yajurved Construction logo"
                                 className="w-28 sm:w-42 object-contain"
                             />
                             <img
                                 src={wordmark}
-                                alt="Yajurveda Logo"
+                                alt="Yajurved Construction wordmark"
                                 className="w-28 sm:w-42 object-contain"
                             />
                             {/* <h3 className="text-xl sm:text-2xl font-[PoppinsSbold] leading-tight">
@@ -177,7 +179,7 @@ const Footer = () => {
                         text-center sm:text-left
                     "
                     >
-                        {t('footer.copyright')}
+                        <span suppressHydrationWarning>{t('footer.copyright', { year: new Date().getFullYear() })}</span>
                         <br />
                         {t('footer.allRights')}
                     </p>

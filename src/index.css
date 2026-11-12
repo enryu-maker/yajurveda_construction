@@ -3,41 +3,43 @@
 @font-face {
     font-family: PoppinsRegular;
     src: url(/fonts/Poppins/Poppins-Regular.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: PoppinsItalic;
     src: url(/fonts/Poppins/Poppins-Italic.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: PoppinsElight;
     src: url(/fonts/Poppins/Poppins-ExtraLight.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: PoppinsMedium;
     src: url(/fonts/Poppins/Poppins-Medium.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: PoppinsBold;
     src: url(/fonts/Poppins/Poppins-Bold.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: PoppinsSbold;
     src: url(/fonts/Poppins/Poppins-SemiBold.ttf);
+    font-display: swap;
 }
 
-/* @font-face {
-    font-family: PoppinsLight;
-    src: url(fonts/Poppins/Poppins-Light.ttf);
-} */
-
 @font-face {
-    font-family: PoppinsItalic;
-    src: url(fonts/Poppins/Poppins-Italic.ttf);
+    font-family: PoppinsLight;
+    src: url(/fonts/Poppins/Poppins-Light.ttf);
+    font-display: swap;
 }
 
 
@@ -64,14 +66,6 @@
   width: 100%; /* Expands to full width on hover */
 }
 
-/* Hide scrollbar on all browsers */
-html, body {
-  scrollbar-width: none;       /* Firefox */
-  -ms-overflow-style: none;    /* IE and Edge */
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  width: 0px;                  /* Chrome, Safari */
-  display: none;
-}
+html { scroll-padding-top: 7rem; }
+::selection { background: #253672; color: #fff; }
+:focus-visible { outline: 3px solid #4666D8; outline-offset: 3px; }
